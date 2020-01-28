@@ -70,7 +70,7 @@ def save_status(status, n_status, char_num):
         count = 0
         for j in range(status.shape[0]):
             machee = status[j][i]
-            matcher = np.array([9,9,9,9,9])
+            matcher = np.array([9, 9, 9, 9, 9])
             if np.array_equal(machee, matcher):
                 count += 1
             if j == status.shape[0]-1 and count-1 == j:
@@ -117,6 +117,12 @@ def get_n_and_path(scene, char_index_list, n_status, path):
     # pass
 
 
+def cal_status(scene, char_index_list):
+    status = get_status(scene, char_index_list)
+    status = correct_status(status, len(char_index_list))
+    return status
+
+
 def general_process(data):
     test_project = [19]
     # test_project = [17, 19, 20, 22, 28, 31, 34, 43, 44, 45, 46, 47, 48, 49, 50,51, 29, 65, 66, 70, 71]
@@ -139,7 +145,7 @@ def general_process(data):
 
         # status
         cur_movie_status = cal_status(scene, char_index_list)
-        cur_movie.initial_status(cur_movie_status)\
+        cur_movie.initial_status(cur_movie_status)
 
         # path
         cur_movie.initial_path()

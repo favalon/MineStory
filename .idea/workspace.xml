@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e52d320c-d5a4-4f6f-8abb-1bafe4bd4ffc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_cal/general_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/general_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_cal/get_n_and_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_cal/get_n_and_path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/general_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/general_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/get_n_and_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/get_n_and_path.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,10 +15,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/statistics_cal/get_n_and_path.py">
+        <entry file="file://$PROJECT_DIR$/statistics_collection/get_n_and_path.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="140" column="61" selection-start-line="140" selection-start-column="61" selection-end-line="140" selection-end-column="61" />
+            <state relative-caret-position="135">
+              <caret line="138" column="30" lean-forward="true" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -30,13 +29,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/general_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="331">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/general/tools.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -58,6 +62,9 @@
         <option value="$PROJECT_DIR$/statistics/get_n_and_path.py" />
         <option value="$PROJECT_DIR$/statistics_cal/general_class.py" />
         <option value="$PROJECT_DIR$/statistics_cal/get_n_and_path.py" />
+        <option value="$PROJECT_DIR$/general/tools.py" />
+        <option value="$PROJECT_DIR$/statistics_collection/get_n_and_path.py" />
+        <option value="$PROJECT_DIR$/general/general_class.py" />
       </list>
     </option>
   </component>
@@ -85,7 +92,12 @@
             <path>
               <item name="MineStory" type="b2602c69:ProjectViewProjectNode" />
               <item name="MineStory" type="462c0819:PsiDirectoryNode" />
-              <item name="statistics_cal" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MineStory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MineStory" type="462c0819:PsiDirectoryNode" />
+              <item name="statistics_collection" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -94,7 +106,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580240967835" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580252444431" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -122,11 +134,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/../anaconda3/envs/networkAlpha/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/statistics_cal" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/statistics_collection" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/statistics_cal/get_n_and_path.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/statistics_collection/get_n_and_path.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,6 +177,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17874931" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -197,14 +210,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/statistics_cal/get_n_and_path.py</url>
+          <url>file://$PROJECT_DIR$/statistics_collection/get_n_and_path.py</url>
           <line>80</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/statistics_cal/get_n_and_path.py</url>
-          <line>142</line>
-          <option name="timeStamp" value="49" />
+          <url>file://$PROJECT_DIR$/statistics_collection/get_n_and_path.py</url>
+          <line>152</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -227,20 +240,23 @@
     <entry file="file://$PROJECT_DIR$/../anaconda3/envs/networkAlpha/lib/python3.6/statistics.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/general/tools.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/general/general_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="331">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/statistics_cal/get_n_and_path.py">
+    <entry file="file://$PROJECT_DIR$/statistics_collection/get_n_and_path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="140" column="61" selection-start-line="140" selection-start-column="61" selection-end-line="140" selection-end-column="61" />
+        <state relative-caret-position="135">
+          <caret line="138" column="30" lean-forward="true" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

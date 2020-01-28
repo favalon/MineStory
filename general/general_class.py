@@ -28,7 +28,17 @@ class Movie:
 
     def initial_path(self):
         status = self.status
-        pass
+        path = np.empty((self.scene_len-1, len(self.characters)), dtype=object)
+        for i in range(path.shape[0]):
+            for c in range(path.shape[1]):
+                _status_1 = self.status[i-1][c].tolist()
+                _status_1 = list(map(str, _status_1))
+                _status_2 = self.status[i][c].tolist()
+                _status_2 = list(map(str, _status_2))
+                # _path = ''.join(_status_1) + '_' + ''.join(_status_2)
+                _path = (''.join(_status_1), ''.join(_status_2))
+                path[i][c] = _path
+        self.path = path
 
 
 class MoviesData:
