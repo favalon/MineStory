@@ -128,6 +128,9 @@ def general_process(data):
     # test_project = [17, 19, 20, 22, 28, 31, 34, 43, 44, 45, 46, 47, 48, 49, 50,51, 29, 65, 66, 70, 71]
     n_status = {}
     path = {}
+
+    movies_data = []
+
     for movie in data:
         if movie['id'] not in test_project:
             continue
@@ -149,7 +152,7 @@ def general_process(data):
 
         # path
         cur_movie.initial_path()
-
+        movies_data.append(cur_movie)
         get_n_and_path(scene, char_index_list, n_status, path)
     print(len(n_status), len(path))
     print(json.dumps(n_status, indent=4, sort_keys=True))
