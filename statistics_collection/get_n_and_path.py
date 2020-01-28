@@ -1,8 +1,7 @@
 import urllib.request
-import json
 import numpy as np
 import json
-from statistics_cal.general_class import Movie
+from general.general_class import Movie
 
 
 KEY_CHARACTER_NUM = 5
@@ -137,6 +136,14 @@ def general_process(data):
         # print(movie['id'])
         cur_movie = Movie(movie['movie']['id'], movie['movie']['name'], movie['id'], movie['name'],
                           movie['movie']['specify']['key_characters'], movie['movie']['specify']['key_characters'][0])
+
+        # status
+        cur_movie_status = cal_status(scene, char_index_list)
+        cur_movie.initial_status(cur_movie_status)\
+
+        # path
+        cur_movie.initial_path()
+
         get_n_and_path(scene, char_index_list, n_status, path)
     print(len(n_status), len(path))
     print(json.dumps(n_status, indent=4, sort_keys=True))
