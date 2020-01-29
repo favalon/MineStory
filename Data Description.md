@@ -1,5 +1,8 @@
 # Original Project Data
-You can directly obtain the data by the url:  http://api.minestoryboard.com/get_projects_data\
+You can directly obtain the data by the url:  http://api.minestoryboard.com/get_projects_data
+
+because we still keep update/delete the data day to day. You can directly use the local data copy.\
+Data copy (2020/1/29) path: statistics_collection/data/or_data.json 
 
 The data is a list of dictionaries, each dictionary (*project_i*) represent a movie project in the stroy manager tool.\
 
