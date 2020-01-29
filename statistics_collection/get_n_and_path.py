@@ -157,15 +157,30 @@ def general_process(data):
         get_n_and_path(scene, char_index_list, n_status, path)
 
     movieAnalysis = MoviesAnalysis(movies_data)
+    movieAnalysis.separate_char()
+    status_freq, path_freq, status_num, path_num = movieAnalysis.separate_char_status()
 
     save_data('/home/dl/MineStory/statistics_collection/data', 'movies_data', movies_data)
     save_data('/home/dl/MineStory/statistics_collection/data', 'n_status', n_status)
     save_data('/home/dl/MineStory/statistics_collection/data', 'path', path)
-
-    print(len(n_status), len(path))
-    print(json.dumps(n_status, indent=4, sort_keys=True))
-    print(json.dumps(path, indent=4, sort_keys=True))
+    summary_print("Main", status_num, path_num, status_freq, path_freq)
     return
+
+
+def summary_print(char_class, status_num, path_num, status, path):
+    print("======== Using Character Class : {char_class} ==========".format(char_class=char_class))
+    print("number of n ={sn}, number of path={pn}".format(sn=len(status_num), pn=len(path_num)))
+    print("================== Status Start =====================")
+    print("first level key : activate flag (health，attitude to goal，change，crisis，goal), 0 is deactivate, 1 is activate")
+    print("second level key : level value (health，attitude to goal，change，crisis，goal)")
+    print(json.dumps(status, indent=4, sort_keys=True))
+    print("================== Status   End =====================")
+
+    print("================== Path Start =====================")
+    print("first level key : activate flag (health，attitude to goal，change，crisis，goal), 0 is deactivate, 1 is activate")
+    print("second level key : path value (status1_status_2)")
+    print(json.dumps(path, indent=4, sort_keys=True))
+    print("================== Path End =====================")
 
 
 def main():
