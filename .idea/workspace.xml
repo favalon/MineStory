@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e52d320c-d5a4-4f6f-8abb-1bafe4bd4ffc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/data/movies_data" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/data/movies_data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/data/n_status" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/data/n_status" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/data/path" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/data/path" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/get_n_and_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/get_n_and_path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/general_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/general_class.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/statistics_collection/get_n_and_path.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="138" column="20" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+            <state relative-caret-position="588">
+              <caret line="165" column="10" lean-forward="true" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -29,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/general_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+            <state relative-caret-position="408">
+              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -79,9 +75,9 @@
         <option value="$PROJECT_DIR$/statistics/get_n_and_path.py" />
         <option value="$PROJECT_DIR$/statistics_cal/general_class.py" />
         <option value="$PROJECT_DIR$/statistics_cal/get_n_and_path.py" />
-        <option value="$PROJECT_DIR$/general/general_class.py" />
         <option value="$PROJECT_DIR$/general/tools.py" />
         <option value="$PROJECT_DIR$/statistics_collection/get_n_and_path.py" />
+        <option value="$PROJECT_DIR$/general/general_class.py" />
       </list>
     </option>
   </component>
@@ -123,7 +119,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580260993446" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580261952137" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -196,7 +192,7 @@
     <frame x="177" y="130" width="1639" height="950" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20276208" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20276208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -205,8 +201,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16077954" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5334957" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.14859927" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.31181487" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32896462" />
@@ -233,8 +229,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/statistics_collection/get_n_and_path.py</url>
-          <line>139</line>
-          <option name="timeStamp" value="62" />
+          <line>156</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -260,11 +256,6 @@
     <entry file="file://$PROJECT_DIR$/../.local/lib/python3.6/site-packages/numpy/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../anaconda3/envs/networkAlpha/lib/python3.6/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3735" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/general/tools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -275,22 +266,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/general_class.py">
+    <entry file="file://$PROJECT_DIR$/../anaconda3/envs/networkAlpha/lib/python3.6/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-3735" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/statistics_collection/get_n_and_path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="138" column="20" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+        <state relative-caret-position="588">
+          <caret line="165" column="10" lean-forward="true" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/general_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
