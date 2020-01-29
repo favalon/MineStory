@@ -2,6 +2,7 @@ import urllib.request
 import numpy as np
 import json
 from general.general_class import Movie
+from general.tools import save_data, load_data
 
 
 KEY_CHARACTER_NUM = 5
@@ -154,6 +155,11 @@ def general_process(data):
         cur_movie.initial_path()
         movies_data.append(cur_movie)
         get_n_and_path(scene, char_index_list, n_status, path)
+
+    save_data('/home/dl/MineStory/statistics_collection/data', 'movies_data', movies_data)
+    save_data('/home/dl/MineStory/statistics_collection/data', 'n_status', n_status)
+    save_data('/home/dl/MineStory/statistics_collection/data', 'path', path)
+
     print(len(n_status), len(path))
     print(json.dumps(n_status, indent=4, sort_keys=True))
     print(json.dumps(path, indent=4, sort_keys=True))
