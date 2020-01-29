@@ -43,9 +43,25 @@ class Movie:
         self.path = path
 
 
-class MoviesData:
+class MoviesAnalysis:
     def __init__(self, movies):
         self.movies = movies
+
+        self.n_status = {}
+        self.n_path = {}
+
+        self._cal_n_status()
+        self._cal_n_path()
+
+    def _cal_n_status(self):
+        for movie in self.movies:
+            status = movie.status
+            save_status(status, self.n_status, len(char_index_list))
+        get_path(status, path)
+        pass
+
+    def _cal_n_path(self):
+        pass
 
     def status_path_all_freq(self):
         pass
