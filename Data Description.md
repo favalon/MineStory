@@ -53,6 +53,9 @@ The data is a list of dictionaries, each dictionary (*project_i*) represent a mo
       
       
 # Processed Project Data
+Get and Save new data: run statistics_collection/get_n_and_path.py \
+temporarily only project in USE_PROJECT_ID will be used
+
 data location : statistics_collection/data/movies_data\
 You can load data by general/tools.load_data
 Each project data is processed and stored in a structure called *Movie* (general/general_class.py)\
