@@ -8,6 +8,8 @@ from general.tools import save_data, load_data
 KEY_CHARACTER_NUM = 5
 CHARACTER_STATUS_NUM = 5
 
+# USE_PROJECT_ID = [17, 19, 20, 22, 28, 31, 34, 43, 44, 45, 46, 47, 48, 49, 50,51, 29, 65, 66, 70, 71]
+
 
 def get_data(url):
     response = urllib.request.urlopen(url)
@@ -125,16 +127,14 @@ def cal_status(scene, char_index_list):
 
 
 def general_process(data):
-    test_project = [19]
-    # test_project = [17, 19, 20, 22, 28, 31, 34, 43, 44, 45, 46, 47, 48, 49, 50,51, 29, 65, 66, 70, 71]
     n_status = {}
     path = {}
 
     movies_data = []
 
     for movie in data:
-        if movie['id'] not in test_project:
-            continue
+        # if movie['id'] not in USE_PROJECT_ID:
+        #     continue
         if movie['movie'] == None:
             continue
         movie_name = movie['movie']['name']
