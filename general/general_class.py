@@ -56,7 +56,7 @@ class MoviesAnalysis:
     def status_path_all_freq(self):
         pass
 
-    def separate_char(self):
+    def separate_char_strict(self):
         separate_main_char = {}
 
         # main_char_index = get_mainChar_index()
@@ -74,7 +74,10 @@ class MoviesAnalysis:
 
         self.separate_char_dict = separate_main_char
 
-    def separate_char_status(self):
+    def separate_char_story(self):
+        pass
+
+    def separate_char_status_strict(self):
         if len(self.separate_char_dict.keys()) < 1:
             return
         separate_status_freq = {}
@@ -106,6 +109,9 @@ class MoviesAnalysis:
                         separate_path_num.append(path_key)
 
         return separate_status_freq, separate_path_freq, separate_status_num, separate_path_num
+
+    def separate_char_status_story(self):
+        pass
 
     def _count_status_freq(self, movie, char_index, status_freq):
         for s in movie.status:

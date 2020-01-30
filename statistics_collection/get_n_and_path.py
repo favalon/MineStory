@@ -10,7 +10,7 @@ KEY_CHARACTER_NUM = 5
 CHARACTER_STATUS_NUM = 5
 
 # USE_PROJECT_ID = [17, 19, 20, 22, 28, 31, 34, 43, 44, 45, 46, 47, 48, 49, 50,51, 29, 65, 66, 70, 71]
-
+DELETE_PROJECT = [50, 58, 41, 40, 29, 78, 72, 57]
 
 def get_data_url(url):
     response = urllib.request.urlopen(url)
@@ -134,7 +134,8 @@ def cal_status(scene, char_index_list):
     return status
 
 
-def temp_modify(status):
+def temp_modify(status, path):
+    # ====== status =====
     new_status_all = {}
     for char_class in status.keys():
         for _status in status[char_class].keys():
@@ -150,7 +151,25 @@ def temp_modify(status):
             else:
                 new_status_all[new_class][_status] = status[char_class][_status]
 
-    return new_status_all
+    # ===== path =====
+    new_path_all = {}
+    for char_class in path.keys():
+        for _path in path[char_class].keys():
+            new_class = ['1', '1', '1', '1', '1']
+            for i, c in enumerate(_path):
+                if i > 4:
+                    break
+                if c == '9':
+                    new_class[i] = '0'
+            new_class = ''.join(new_class)
+
+            if new_class not in new_path_all:
+                new_path_all[new_class] = {}
+                new_path_all[new_class][_path] = path[char_class][_path]
+            else:
+                new_path_all[new_class][_path] = path[char_class][_path]
+
+    return new_status_all, new_path_all
 
 
 def general_process(data):
@@ -184,14 +203,20 @@ def general_process(data):
     #     get_n_and_path(scene, char_index_list, n_status, path)
 
     movies_data = load_data('statistics_collection/data', 'movies_data')
-    movieAnalysis = MoviesAnalysis(movies_data)
-    movieAnalysis.separate_char()
-    status_freq, path_freq, status_num, path_num = movieAnalysis.separate_char_status()
+    # filter
+    filtered_movies = []
+    for movie_data in movies_data:
+        if movie_data.p_id not in DELETE_PROJECT:
+            filtered_movies.append(movie_data)
+
+    movieAnalysis = MoviesAnalysis(filtered_movies)
+    movieAnalysis.separate_char_strict()
+    status_freq, path_freq, status_num, path_num = movieAnalysis.separate_char_status_strict()
 
     # =========== temp status modify ==============
-    status_freq = temp_modify(status_freq)
+    status_freq, path_freq = temp_modify(status_freq, path_freq)
 
-    save_data('statistics_collection/data', 'movies_data', movies_data)
+    # save_data('statistics_collection/data', 'movies_data', movies_data)
     # save_data('/home/dl/MineStory/statistics_collection/data', 'n_status', n_status)
     # save_data('/home/dl/MineStory/statistics_collection/data', 'path', path)
     summary_print("Main", status_num, path_num, status_freq, path_freq)
