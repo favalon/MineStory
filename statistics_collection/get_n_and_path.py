@@ -1,6 +1,7 @@
 import urllib.request
 import numpy as np
 import json
+import os
 from general.general_class import Movie, MoviesAnalysis
 from general.tools import save_data, load_data
 
@@ -11,9 +12,16 @@ CHARACTER_STATUS_NUM = 5
 # USE_PROJECT_ID = [17, 19, 20, 22, 28, 31, 34, 43, 44, 45, 46, 47, 48, 49, 50,51, 29, 65, 66, 70, 71]
 
 
-def get_data(url):
+def get_data_url(url):
     response = urllib.request.urlopen(url)
     data = json.loads(response.read())
+    return data
+
+
+def get_data_json(path):
+    if os.path.isfile(path):
+        with open(os.path.join(path)) as f:
+            data = json.load(f)
     return data
 
 
@@ -126,43 +134,66 @@ def cal_status(scene, char_index_list):
     return status
 
 
+def temp_modify(status):
+    new_status_all = {}
+    for char_class in status.keys():
+        for _status in status[char_class].keys():
+            new_class = ['1', '1', '1', '1', '1']
+            for i, c in enumerate(_status):
+                if c == '9':
+                    new_class[i] = '0'
+            new_class = ''.join(new_class)
+
+            if new_class not in new_status_all:
+                new_status_all[new_class] = {}
+                new_status_all[new_class][_status] = status[char_class][_status]
+            else:
+                new_status_all[new_class][_status] = status[char_class][_status]
+
+    return new_status_all
+
+
 def general_process(data):
-    n_status = {}
-    path = {}
+    # n_status = {}
+    # path = {}
+    #
+    # movies_data = []
 
-    movies_data = []
+    # for movie in data:
+    #     # if movie['id'] not in USE_PROJECT_ID:
+    #     #     continue
+    #     if movie['movie'] == None:
+    #         continue
+    #     movie_name = movie['movie']['name']
+    #     char_index_list = get_char_index(movie['movie']['specify']['key_characters'])
+    #     # char_index_list = [0, 1, 2, 3, 4]
+    #     scene = movie['scene']
+    #     if len(scene) < 2:
+    #         continue
+    #     # print(movie['id'])
+    #     cur_movie = Movie(movie['movie']['id'], movie['movie']['name'], movie['id'], movie['name'],
+    #                       movie['movie']['specify']['key_characters'], movie['movie']['specify']['key_characters'][0])
+    #
+    #     # status
+    #     cur_movie_status = cal_status(scene, char_index_list)
+    #     cur_movie.initial_status(cur_movie_status)
+    #
+    #     # path
+    #     cur_movie.initial_path()
+    #     movies_data.append(cur_movie)
+    #     get_n_and_path(scene, char_index_list, n_status, path)
 
-    for movie in data:
-        # if movie['id'] not in USE_PROJECT_ID:
-        #     continue
-        if movie['movie'] == None:
-            continue
-        movie_name = movie['movie']['name']
-        char_index_list = get_char_index(movie['movie']['specify']['key_characters'])
-        # char_index_list = [0, 1, 2, 3, 4]
-        scene = movie['scene']
-        if len(scene) < 2:
-            continue
-        # print(movie['id'])
-        cur_movie = Movie(movie['movie']['id'], movie['movie']['name'], movie['id'], movie['name'],
-                          movie['movie']['specify']['key_characters'], movie['movie']['specify']['key_characters'][0])
-
-        # status
-        cur_movie_status = cal_status(scene, char_index_list)
-        cur_movie.initial_status(cur_movie_status)
-
-        # path
-        cur_movie.initial_path()
-        movies_data.append(cur_movie)
-        get_n_and_path(scene, char_index_list, n_status, path)
-
+    movies_data = load_data('statistics_collection/data', 'movies_data')
     movieAnalysis = MoviesAnalysis(movies_data)
     movieAnalysis.separate_char()
     status_freq, path_freq, status_num, path_num = movieAnalysis.separate_char_status()
 
-    save_data('/home/dl/MineStory/statistics_collection/data', 'movies_data', movies_data)
-    save_data('/home/dl/MineStory/statistics_collection/data', 'n_status', n_status)
-    save_data('/home/dl/MineStory/statistics_collection/data', 'path', path)
+    # =========== temp status modify ==============
+    status_freq = temp_modify(status_freq)
+
+    save_data('statistics_collection/data', 'movies_data', movies_data)
+    # save_data('/home/dl/MineStory/statistics_collection/data', 'n_status', n_status)
+    # save_data('/home/dl/MineStory/statistics_collection/data', 'path', path)
     summary_print("Main", status_num, path_num, status_freq, path_freq)
     return
 
@@ -184,9 +215,13 @@ def summary_print(char_class, status_num, path_num, status, path):
 
 
 def main():
-    data_url = "http://api.minestoryboard.com/get_projects_data"
-    data = get_data(data_url)
-    general_process(data)
+    # data_url = "http://api.minestoryboard.com/get_projects_data"
+    # data = get_data_url(data_url)
+    # data = get_data_json('statistics_collection/data/or_data.json')
+    # general_process(data)
+
+    general_process("1")
+
     pass
 
 
