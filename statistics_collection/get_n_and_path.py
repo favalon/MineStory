@@ -1,9 +1,8 @@
-import urllib.request
 import numpy as np
 import json
 import os
 from general.general_class import Movie, MoviesAnalysis
-from general.tools import save_data, load_data
+from general.tools import save_data, load_data, get_data_url
 
 
 KEY_CHARACTER_NUM = 5
@@ -11,18 +10,6 @@ CHARACTER_STATUS_NUM = 5
 
 # USE_PROJECT_ID = [17, 19, 20, 22, 28, 31, 34, 43, 44, 45, 46, 47, 48, 49, 50,51, 29, 65, 66, 70, 71]
 DELETE_PROJECT = [50, 58, 41, 40, 29, 78, 72, 57]
-
-def get_data_url(url):
-    response = urllib.request.urlopen(url)
-    data = json.loads(response.read())
-    return data
-
-
-def get_data_json(path):
-    if os.path.isfile(path):
-        with open(os.path.join(path)) as f:
-            data = json.load(f)
-    return data
 
 
 def get_char_index(characters):
@@ -227,8 +214,9 @@ def summary_print(char_class, status_num, path_num, status, path):
     print("======== Using Character Class : {char_class} ==========".format(char_class=char_class))
     print("number of n ={sn}, number of path={pn}".format(sn=len(status_num), pn=len(path_num)))
     print("================== Status Start =====================")
-    print("first level key : activate flag (health，attitude to goal，change，crisis，goal), 0 is deactivate, 1 is activate")
-    print("second level key : level value (health，attitude to goal，change，crisis，goal)")
+    print("first level key : activate flag (health，attitude to goal, change，crisis, goal), "
+          "0 is deactivate, 1 is activate")
+    print("second level key : level value (health，attitude to goal， change，crisis, goal)")
     print(json.dumps(status, indent=4, sort_keys=True))
     print("================== Status   End =====================")
 
@@ -240,9 +228,9 @@ def summary_print(char_class, status_num, path_num, status, path):
 
 
 def main():
-    # data_url = "http://api.minestoryboard.com/get_projects_data"
-    # data = get_data_url(data_url)
-    # data = get_data_json('statistics_collection/data/or_data.json')
+    data_url = "http://api.minestoryboard.com/get_projects_data"
+    data1 = get_data_url(data_url)
+    data = get_data_json('statistics_collection/data/or_data.json')
     # general_process(data)
 
     general_process("1")
