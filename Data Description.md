@@ -2,8 +2,8 @@
 You can directly obtain the data by the url:  http://api.minestoryboard.com/get_projects_data
 
 the url link data is deleted for rework.\
-the original data can find in or_data.txt.\
-Please directly use the data store in path : statistics_collection/data/movies_data
+the original data (json) can find in path : statistics_collection/data/movies_20200130
+run statistics_collection/main.py 
 
 The data is a list of dictionaries, each dictionary (*project_i*) represent a movie project in the stroy manager tool.\
 
@@ -56,7 +56,7 @@ The data is a list of dictionaries, each dictionary (*project_i*) represent a mo
         - 'default_goal' : int, default flag  for visulization 
       
       
-# Processed Project Data
+# Processed Project Data (Don't use this right now) 
 Get and Save new data: run statistics_collection/get_n_and_path.py \
 temporarily only project in USE_PROJECT_ID will be used
 

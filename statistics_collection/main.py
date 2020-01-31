@@ -234,10 +234,17 @@ def general_process(movies):
         n_3_path_num += len(n_3_path[p3t])
 
     summary_print('MainCharacter', n_status_num, n_path_num, n_status, n_path)
+    summary_save(movies_smf, n_status, n_path)
     print(n_3_path_num)
     print(json.dumps(n_3_path, indent=4, sort_keys=True))
 
     return movies, movies_smf
+
+
+def summary_save(movies, n_status, path):
+    save_data('statistics_collection/data', 'movies_data', movies)
+    save_data('/home/dl/MineStory/statistics_collection/data', 'n_status', n_status)
+    save_data('/home/dl/MineStory/statistics_collection/data', 'path', path)
 
 
 def summary_print(char_class, status_num, path_num, status, path):
