@@ -36,6 +36,16 @@ def save_data(path, fn, data):
         print('data save error')
 
 
+def save_data_json(path, fn, data):
+    if not os.path.exists(path):
+        os.makedirs(path)
+    if os.path.isdir(path):
+        with open(os.path.join(path, fn), 'w') as f:
+            json.dump(data, f, indent=2)
+    else:
+        print('data save error')
+
+
 def load_data(path, fn):
     if os.path.isfile(os.path.join(path, fn)):
         with open(os.path.join(path,fn), 'rb') as f:

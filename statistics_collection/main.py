@@ -3,7 +3,7 @@ import numpy as np
 import json
 import os
 from general.general_class import Movie, MoviesAnalysis
-from general.tools import save_data, load_data, get_data_url, get_data_txt, get_data_json
+from general.tools import save_data, load_data, get_data_url, get_data_txt, get_data_json, save_data_json
 from general.tools import summary_save, summary_print
 from general.single_movie_process import story_first_process
 from greed_process.main import main as greed_process
@@ -265,7 +265,9 @@ def greed_path_process(movies, today):
             # =================================================
             selected_movies.append(movie)
 
-    greed_process(selected_movies)
+    save_data_json('statistics_collection/data_{}'.format(today), 'movies_data', selected_movies)
+
+    greed_process(selected_movies, n=10)
 
     pass
 

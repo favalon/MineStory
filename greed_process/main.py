@@ -2,9 +2,13 @@ import os
 import json
 import numpy as np
 from sklearn.cluster import KMeans
+from scipy import spatial
+from general.tools import save_data_json
+from datetime import date
+
 
 RECURSIVE_TIME = 1
-MINI_SIMILAR = 0
+STATUS_WEIGHT = [1, 1, 1, 1, 2]
 
 
 def cal_movie_scenes_class_num(epoch):
@@ -88,33 +92,37 @@ def cal_rep_scenes_tri(movies):
 
 
 def cal_rep_path_collection(rep_scenes, path_list, scene_index):
-    if scene_index == len(rep_scenes)-1:
-        return
+    if scene_index == len(rep_scenes):
+        return path_list
 
     new_path_list = []
     if scene_index == 0:
         for rep_scene in rep_scenes[scene_index]:
             new_path_list.append([rep_scene.tolist()])
     else:
-        for path in path_list:
+        for i in range(len(path_list)):
             for rep_scene in rep_scenes[scene_index]:
-                new_path_list = path.append(rep_scene.tolist())
+                new_path = path_list[i].copy()
+                new_path.append(rep_scene.tolist())
+                new_path_list.append(new_path)
 
-    cal_rep_path_collection(rep_scenes, new_path_list, scene_index+1)
+    return cal_rep_path_collection(rep_scenes, new_path_list, scene_index+1)
 
-    return new_path_list
 
 
 def cal_selected_movie_path_collection(movies):
+    movie_path_dict = {}
     for movie in movies:
-        pass
-    return 1
+        movie_path_dict[movie['id']] = movie['scene_tri']
+    return movie_path_dict
 
 
 def tempo_result_output(candi_scene):
     candi_dict = {}
+    temp_candi_path =[]
     for i, scene in enumerate(candi_scene):
         scene_candi_dict = {}
+        temp_candi = []
         for path in scene:
             path_class = ''.join(list(map(str, path)))
 
@@ -122,24 +130,80 @@ def tempo_result_output(candi_scene):
                 scene_candi_dict[path_class] += 1
             else:
                 scene_candi_dict[path_class] = 1
+                temp_candi.append(path)
         candi_dict[i] = scene_candi_dict
+        temp_candi_path.append(np.array(temp_candi))
     print(json.dumps(candi_dict, indent=4, sort_keys=True))
+    return temp_candi_path
 
 
-def main(movies):
+def cal_node_distance(movie_node, rep_node):
+    cost = 0
+    for i in range(len(movie_node)):
+        cost += abs(movie_node[i] - rep_node[i]) * STATUS_WEIGHT[i]
+
+    return cost
+
+
+def select_n_path(movie_path, rep_path_dict, n):
+    rank_path_dict = {}
+    for rep_id in rep_path_dict.keys():
+        rep_path = rep_path_dict[rep_id]
+        cos_sim = 0
+        for i, rep_node in enumerate(rep_path):
+            cos_sim += cal_node_distance(movie_path[i], rep_node)
+        rank_path_dict[rep_id] = cos_sim
+    ranked_path_dict = {k: v for k, v in sorted(rank_path_dict.items(), key=lambda item: item[1])}
+
+    n_path = []
+    for rep_id in ranked_path_dict.keys():
+        if n < 1:
+            break
+        one_path = [[round(y) for y in x] for x in rep_path_dict[rep_id]]
+        n_path.append(one_path)
+        n -= 1
+    return n_path
+
+
+def select_n_best_similarity(selected_movie_path, rep_path, n):
+    rep_path_dict = {}
+    for i, path in enumerate(rep_path):
+        rep_path_dict[i] = path
+
+    movie_hyper_path_dict = {}
+    for movie_id in selected_movie_path.keys():
+        movie_hyper_path = select_n_path(selected_movie_path[movie_id], rep_path_dict, n)
+        movie_hyper_path_dict[movie_id] = movie_hyper_path
+
+    return movie_hyper_path_dict
+
+
+def main(movies, n=10):
     get_scenes_tri(movies)
 
     rep_scenes, candi_scene = cal_rep_scenes_tri(movies)
 
     # =================== temp usage ==================
-    tempo_result_output(candi_scene)
+    temp_candi_scene = tempo_result_output(candi_scene)
     # =================================================
 
     path_list = []
-    rep_path = cal_rep_path_collection(rep_scenes, path_list, 0)
+    # wait update rep_scenes selections
+    # rep_path = cal_rep_path_collection(rep_scenes, path_list, 0)
+
+    rep_path = cal_rep_path_collection(temp_candi_scene, path_list, 0)
 
     selected_movie_path = cal_selected_movie_path_collection(movies)
 
+    movie_hyper_path_dict = select_n_best_similarity(selected_movie_path, rep_path, n)
+
+    for key in selected_movie_path.keys():
+        selected_movie_path[key] = [''.join(list(map(str, x))) for x in selected_movie_path[key]]
+    for key in movie_hyper_path_dict.keys():
+        movie_hyper_path_dict[key] = [[''.join(list(map(str, y))) for y in x] for x in movie_hyper_path_dict[key]]
+    today = date.today()
+    save_data_json('statistics_collection/data_{}'.format(today), 'select_movie_path.json', selected_movie_path)
+    save_data_json('statistics_collection/data_{}'.format(today), 'hyper_movie_path.json', movie_hyper_path_dict)
 
     pass
 
