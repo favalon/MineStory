@@ -4,7 +4,10 @@ import json
 import os
 from general.general_class import Movie, MoviesAnalysis
 from general.tools import save_data, load_data, get_data_url, get_data_txt, get_data_json
+from general.tools import summary_save, summary_print
 from general.single_movie_process import story_first_process
+from greed_process.main import main as greed_process
+from datetime import date
 from collections import namedtuple
 
 ACCESS_ROLE = 'MainCharacter'
@@ -216,7 +219,12 @@ def general_process(movies):
     for movie in movies_smf:
         story_first_process(movie)
 
+    return movies, movies_smf
+
+
+def count_process(movies_smf, today):
     # ===== count process ===========
+
     n_status = {}
     n_path = {}
     n_3_path = {}
@@ -233,47 +241,47 @@ def general_process(movies):
     for p3t in n_3_path:
         n_3_path_num += len(n_3_path[p3t])
 
-    summary_print('MainCharacter', n_status_num, n_path_num, n_status, n_path)
-    summary_save(movies_smf, n_status, n_path)
+    summary_print('MainCharacter', n_status_num, n_path_num, n_status, n_path, today)
+    # summary_save(movies_smf, n_status, n_path,  today)
     print(n_3_path_num)
     print(json.dumps(n_3_path, indent=4, sort_keys=True))
 
-    return movies, movies_smf
+
+def temp_movie_modify_process(movie, main_char_index):
+    for scene in movie['scene']:
+        scene['specify_data'][main_char_index]['health'] = scene['specify_data'][main_char_index]['crisis']
 
 
-def summary_save(movies, n_status, path):
-    save_data('statistics_collection/data', 'movies_data', movies)
-    save_data('/home/dl/MineStory/statistics_collection/data', 'n_status', n_status)
-    save_data('/home/dl/MineStory/statistics_collection/data', 'path', path)
+def greed_path_process(movies, today):
+    selected_class = ['11111', '01111']
+    selected_movies = []
+    for movie in movies:
+        # main_char_index = get_main_character_index()
+        main_char_index = 0
+        if movie['story_first_character_flag'][main_char_index] in selected_class:
+            # =================== temp usage ==================
+            if movie['story_first_character_flag'][main_char_index] in ['01111']:
+                temp_movie_modify_process(movie, main_char_index)
+            # =================================================
+            selected_movies.append(movie)
 
+    greed_process(selected_movies)
 
-def summary_print(char_class, status_num, path_num, status, path):
-    print("======== Using Character Class : {char_class} ==========".format(char_class=char_class))
-    print("number of n ={sn}, number of path={pn}".format(sn=status_num, pn=path_num))
-    print("================== Status Start =====================")
-    print("first level key : activate flag (health，attitude to goal, change，crisis, goal), "
-          "0 is deactivate, 1 is activate")
-    print("second level key : level value (health，attitude to goal， change，crisis, goal)")
-    print(json.dumps(status, indent=4, sort_keys=True))
-    print("================== Status   End =====================")
-
-    print("================== Path Start =====================")
-    print("first level key : activate flag (health，attitude to goal，change，crisis，goal), 0 is deactivate, 1 is activate")
-    print("second level key : path value (status1_status_2)")
-    print(json.dumps(path, indent=4, sort_keys=True))
-    print("================== Path End =====================")
+    pass
 
 
 def main():
+    today = date.today()
+
     # data_url = "http://api.minestoryboard.com/get_projects_data"
     # data = get_data_url(data_url)
 
     data = get_data_json('statistics_collection/data/movies_20200130')
 
     movies, movies_smf = general_process(data)
-    # with open('statistics_collection/data/movies', 'w') as f:
-    #      json.dump(data, f)
-    # save_data('statistics_collection/data/', 'movies', movies)
+    # count_process(movies_smf, today)
+
+    greed_path_process(movies_smf, today)
 
 
 if __name__ == '__main__':
