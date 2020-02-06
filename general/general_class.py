@@ -1,14 +1,69 @@
 import numpy as np
+import itertools
+import matplotlib.pyplot as plt
 import json
 
 
+class Cluster:
+    def __init__(self, cluster, project_id):
+        self.cluster = cluster
+        self.contain = [cluster]
+        self.project_ids = [project_id]
+
+    def update_cluster(self, cluster, p_id):
+        self.contain.append(cluster)
+        cluster_sum = np.zeros(cluster.shape)
+        for _cluster in self.contain:
+            cluster_sum += _cluster
+        self.cluster = cluster_sum/len(self.contain)
+        self.project_ids.append(p_id)
+
+    def cluster_plot(self, status_index):
+        marker = itertools.cycle((',', '+', '.', 'o', '*'))
+        x = np.arange(0, len(self.cluster))
+        for status in self.contain:
+            plt.plot(x, status, c=np.random.rand(3, ), marker=next(marker))
+
+        plt.title('Cluster ID:{cluster_id} Status:{status_index} Plot '
+                  .format(cluster_id=self.project_ids[0], status_index=status_index))
+        plt.xlabel('time')
+        plt.ylabel('level')
+        plt.savefig('statistics_collection/plot_data/cluster_{cluster_id}_movies_status{status_index}.png'
+                    .format(cluster_id=self.project_ids[0], status_index=status_index))
+
+        plt.clf()
+        plt.plot(x, self.cluster, c=np.random.rand(3, ), marker=next(marker))
+        plt.title('Cluster ID:{cluster_id}, Status:{status_index} Representation Plot, {movie_num} Movies in this Cluster'
+                  .format(cluster_id=self.project_ids[0], status_index=status_index, movie_num=len(self.project_ids)))
+        plt.xlabel('time')
+        plt.ylabel('level')
+        plt.savefig('statistics_collection/plot_data/cluster_{cluster_id}_rep_movies_status{status_index}.png'
+                    .format(cluster_id=self.project_ids[0], status_index=status_index))
+        plt.clf()
+
+
 class MoviePlot:
-    def __init__(self, p_id, p_name, main_char_index, movie_status, normalize_axis):
+    def __init__(self, p_id, p_name, main_char_index, movie_status, resample_status,normalize_axis):
         self.project_id = p_id
         self.project_name = p_name
         self.movie_status = movie_status
         self.x_axis = normalize_axis
         self.main_char_index = main_char_index
+        self.resample_status = resample_status
+
+        self.down_sample_status = None
+
+    def down_sample(self, n=100):
+        resample_len = self.resample_status.shape[-1]
+        adder = int(resample_len/n)
+        self.down_sample_status = np.zeros((self.resample_status.shape[0], self.resample_status.shape[1], n))
+        for c_i in range(self.resample_status.shape[0]):
+            for st_i in range(self.resample_status.shape[1]):
+                pointer = 0
+                for s_i in range(n):
+                    # print(pointer)
+                    self.down_sample_status[c_i][st_i][s_i] = self.resample_status[c_i][st_i][pointer]
+                    pointer += adder
 
 
 class Movie:

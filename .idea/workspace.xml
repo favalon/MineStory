@@ -3,8 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="e52d320c-d5a4-4f6f-8abb-1bafe4bd4ffc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general/general_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/general_class.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/general/plot_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/plot_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4.png" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/greed_process/side_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/greed_process/side_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_movies_status4_part9.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,60 +189,60 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="409" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580277113249" />
-    <state width="1368" height="740" key="DebuggerActiveHint" timestamp="1580950516572">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1525" height="589" key="DebuggerActiveHint" timestamp="1580976651016">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1220" height="467" key="DebuggerActiveHint/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674456188" />
     <state width="1368" height="740" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1580950516572" />
-    <state width="1525" height="589" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1580939080794" />
-    <state width="1899" height="358" key="GridCell.Tab.0.bottom" timestamp="1580964444860">
+    <state width="1525" height="589" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1580976651016" />
+    <state width="1899" height="358" key="GridCell.Tab.0.bottom" timestamp="1580978350639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580963075261" />
-    <state width="1899" height="358" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580964444860" />
-    <state width="1899" height="358" key="GridCell.Tab.0.center" timestamp="1580964444860">
+    <state width="1899" height="358" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580978350639" />
+    <state width="1899" height="358" key="GridCell.Tab.0.center" timestamp="1580978350639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.center/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580963075260" />
-    <state width="1899" height="358" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580964444860" />
-    <state width="1899" height="358" key="GridCell.Tab.0.left" timestamp="1580964444860">
+    <state width="1899" height="358" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580978350639" />
+    <state width="1899" height="358" key="GridCell.Tab.0.left" timestamp="1580978350639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.left/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580963075259" />
-    <state width="1899" height="358" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580964444860" />
-    <state width="1899" height="358" key="GridCell.Tab.0.right" timestamp="1580964444860">
+    <state width="1899" height="358" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580978350639" />
+    <state width="1899" height="358" key="GridCell.Tab.0.right" timestamp="1580978350639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.right/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580963075261" />
-    <state width="1899" height="358" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580964444860" />
-    <state width="1899" height="382" key="GridCell.Tab.1.bottom" timestamp="1580964017199">
+    <state width="1899" height="358" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580978350639" />
+    <state width="1899" height="266" key="GridCell.Tab.1.bottom" timestamp="1580977954588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674411722" />
     <state width="1515" height="288" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580951698984" />
-    <state width="1899" height="382" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580964017199" />
-    <state width="1899" height="382" key="GridCell.Tab.1.center" timestamp="1580964017198">
+    <state width="1899" height="266" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580977954588" />
+    <state width="1899" height="266" key="GridCell.Tab.1.center" timestamp="1580977954588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.1.center/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674411722" />
     <state width="1515" height="288" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580951698983" />
-    <state width="1899" height="382" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580964017198" />
-    <state width="1899" height="382" key="GridCell.Tab.1.left" timestamp="1580964017198">
+    <state width="1899" height="266" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580977954588" />
+    <state width="1899" height="266" key="GridCell.Tab.1.left" timestamp="1580977954588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.1.left/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674411722" />
     <state width="1515" height="288" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580951698983" />
-    <state width="1899" height="382" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580964017198" />
-    <state width="1899" height="382" key="GridCell.Tab.1.right" timestamp="1580964017198">
+    <state width="1899" height="266" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580977954588" />
+    <state width="1899" height="266" key="GridCell.Tab.1.right" timestamp="1580977954588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.1.right/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674411722" />
     <state width="1515" height="288" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580951698983" />
-    <state width="1899" height="382" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580964017198" />
+    <state width="1899" height="266" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580977954588" />
     <state x="299" y="110" key="SettingsEditor" timestamp="1580947707608">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -230,10 +253,10 @@
     </state>
     <state x="454" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1580276876833" />
     <state x="568" y="299" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580349377032" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580433302546">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580975907414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580433302546" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580975907414" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -275,13 +298,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/general/plot_process.py</url>
-          <line>67</line>
+          <line>95</line>
           <option name="timeStamp" value="296" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/general/plot_process.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="302" />
+          <line>59</line>
+          <option name="timeStamp" value="306" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/general/general_class.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="325" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
