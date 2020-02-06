@@ -1,6 +1,8 @@
 import numpy as np
+import random
 from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
+import itertools
 
 from general.general_class import MoviePlot
 
@@ -33,28 +35,45 @@ def prepare_movie_plot_data(movies):
 
 
 def plot_all(movies, status):
-
+    count_max = 5
+    count = 0
+    plt_index = 0
+    marker = itertools.cycle((',', '+', '.', 'o', '*'))
     for p_id in movies.keys():
         x = movies[p_id].x_axis
         for c_i in movies[p_id].main_char_index:
             y = movies[p_id].movie_status[int(c_i)][status]
-            if y[-1] == 3:
-                # print(movies[p_id].project_id)
-                print(movies[p_id].project_name)
+            # if y[-1] == 3:
+            #     # print(movies[p_id].project_id)
+            #     print(movies[p_id].project_name)
             if sum(y) == len(x)*9 or sum(y) == 0:
+                print(movies[p_id].project_id)
                 continue
-            plt.plot(x, y, 'r--')
-            # print(m_i)
-    plt.title('All Movies Status {status_id} Plot '.format(status_id=status))
-    plt.xlabel('time')
-    plt.ylabel('level')
-    plt.savefig('statistics_collection/plot_data/all_movies_status{status_index}.png'.format(status_index=status))
+            plt.plot(x, y, c=np.random.rand(3,), marker=next(marker))
+            count += 1
+
+            if count == count_max:
+                plt.title('All Movies Status {status_id} Plot '.format(status_id=status))
+                plt.xlabel('time')
+                plt.ylabel('level')
+                plt.savefig('statistics_collection/plot_data/all_movies_status{status_index}_part{plt_index}.png'
+                            .format(status_index=status, plt_index=plt_index))
+                plt_index += 1
+                count = 0
+                plt.clf()
+
 
     # plt.title('The Lasers in Three Conditions')
     # plt.xlabel('row')
     # plt.ylabel('column')
     # plt.legend()
     # plt.show()
+
+
+def random_color():
+    rgbl=[255,0,0]
+    random.shuffle(rgbl)
+    return tuple(rgbl)
 
 
 def plot_by_id(movies, project_id, status):
