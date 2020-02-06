@@ -7,6 +7,7 @@ from general.tools import save_data, load_data, get_data_url, get_data_txt, get_
 from general.tools import summary_save, summary_print
 from general.single_movie_process import story_first_process
 from greed_process.main import main as greed_process
+from general.plot_process import plot_main
 from datetime import date
 from collections import namedtuple
 
@@ -175,7 +176,7 @@ def count_each_char_3_path(n_3_path_class, char_index, movie):
 
 
 def count_status_path(movie, n_status, n_path, n_3_path):
-    # char_index = movie['MainCharacter_flag'].keys()[0]
+    char_index = movie['MainCharacter_flag'].keys()[0]
     chars_index = [0]
     for char_index in chars_index:
         char_class = ''.join(movie['story_first_character_flag'][char_index])
@@ -205,7 +206,7 @@ def general_process(movies):
     # ===== movie first data clean ===========
     filtered_movies = []
     for movie in movies:
-        if not movie['movie'] or movie['id'] in [57, 58, 63, 82, 78, 62, 61, 59, 54, 50, 41, 40, 55, 64, 74, 72]:
+        if not movie['movie'] or movie['id'] in [0]:
             continue
         filtered_movies.append(movie)
 
@@ -254,6 +255,7 @@ def temp_movie_modify_process(movie, main_char_index):
 
 def greed_path_process(movies, today):
     selected_class = ['11111', '01111']
+    selected_class = ['11101']
     selected_movies = []
     for movie in movies:
         # main_char_index = get_main_character_index()
@@ -272,18 +274,32 @@ def greed_path_process(movies, today):
     pass
 
 
+def error_check(movies):
+    for movie in movies:
+        if 'MainCharacter_flag' not in movie.keys():
+            print(movie['id'])
+
+    pass
+
 def main():
     today = date.today()
 
-    # data_url = "http://api.minestoryboard.com/get_projects_data"
-    # data = get_data_url(data_url)
-
-    data = get_data_json('statistics_collection/data/movies_20200130')
-
+    data_url = "http://api.minestoryboard.com/get_projects_data"
+    data = get_data_url(data_url)
+    #
+    # save_data_json('statistics_collection/data/', 'data_0205', data)
+    # data = get_data_json('statistics_collection/data/data_0205_smf')
     movies, movies_smf = general_process(data)
+    # movies_smf = get_data_json('statistics_collection/data/data_0205_smf')
+    # scene length average： movie_data -> all status length average -> plot status curve
+
+    error_check(movies_smf)
+
+    plot_main(movies_smf, status=4, all_movie=True)
+
     # count_process(movies_smf, today)
 
-    greed_path_process(movies_smf, today)
+    # greed_path_process(movies_smf, today)
 
 
 if __name__ == '__main__':

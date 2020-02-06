@@ -2,6 +2,15 @@ import numpy as np
 import json
 
 
+class MoviePlot:
+    def __init__(self, p_id, p_name, main_char_index, movie_status, normalize_axis):
+        self.project_id = p_id
+        self.project_name = p_name
+        self.movie_status = movie_status
+        self.x_axis = normalize_axis
+        self.main_char_index = main_char_index
+
+
 class Movie:
     def __init__(self, m_id, m_name, p_id, p_name, characters, main_char):
         self.m_id = m_id
