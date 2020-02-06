@@ -2,6 +2,7 @@ import numpy as np
 import random
 from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
+from scipy import spatial
 import itertools
 from general.tools import save_data, load_data
 
@@ -9,7 +10,7 @@ from general.general_class import MoviePlot, Cluster
 
 STATUS_NUM = 5
 STATUS_MAX_LENGTH = 1000
-MIN_THRESHOLD = 7
+MIN_THRESHOLD = 5
 
 
 def resample_scene_length(movie_status, resampled_movie_status, scene_len):
@@ -29,7 +30,7 @@ def resample_scene_length(movie_status, resampled_movie_status, scene_len):
     return
 
 
-def prepare_movie_plot_data(movies, save=False):
+def prepare_movie_plot_data(movies, n, save=False):
     movies_plot = {}
     for movie in movies:
         project_id = movie['id']
@@ -53,7 +54,7 @@ def prepare_movie_plot_data(movies, save=False):
         normalize_status_x = np.arange(movie_status.shape[-1], dtype=np.float32)
         normalize_status_x /= np.max(np.abs(normalize_status_x))
         movie_plot = MoviePlot(project_id, project_name, main_char_index, movie_status, resampled_movie_status, normalize_status_x)
-        movie_plot.down_sample(n=100)
+        movie_plot.down_sample(n=n)
         movies_plot[project_id] = movie_plot
         if save:
             save_data('statistics_collection/data/', 'movie_plot', movies_plot)
@@ -96,12 +97,6 @@ def plot_all(movies, status):
     # plt.show()
 
 
-def random_color():
-    rgbl=[255,0,0]
-    random.shuffle(rgbl)
-    return tuple(rgbl)
-
-
 def plot_by_id(movies, project_id, status):
     if status is not None:
         for p_id in project_id:
@@ -121,11 +116,12 @@ def plot_by_id(movies, project_id, status):
 
 
 def cal_error_distance(cluster1, cluster2):
-    dist = np.linalg.norm(cluster1-cluster2)
+    dist = np.linalg.norm(np.abs(cluster1-cluster2))
+    # dist = 1 - spatial.distance.cosine(cluster1, cluster2)
     return dist
 
 
-def compare_cluster(status_cluster, movie_status, project_id, char_index, status):
+def compare_cluster(status_cluster, movie_status, project_id, char_index, status, edc_dis):
 
     if len(status_cluster) == 0:
         for c_i in char_index:
@@ -136,7 +132,7 @@ def compare_cluster(status_cluster, movie_status, project_id, char_index, status
             dist_list = []
             for i, cur_cluster in enumerate(status_cluster):
                 dist = cal_error_distance(cur_cluster.cluster, movie_status[c_i][status])
-                if dist <= MIN_THRESHOLD:
+                if dist <= edc_dis:
                     dist_list.append(dist)
                     cluster_flag = True
                 else:
@@ -149,21 +145,83 @@ def compare_cluster(status_cluster, movie_status, project_id, char_index, status
                 status_cluster.append(Cluster(movie_status[c_i][status], project_id))
 
 
-def movies_status_cluster(movies_plot, status):
-    status_cluster = []
-    for p_i in movies_plot.keys():
-        movie_plot = movies_plot[p_i]
-        movie_status = movie_plot.down_sample_status
-        char_index = movie_plot.main_char_index
-        compare_cluster(status_cluster, movie_status, p_i, char_index, status)
-    return status_cluster
+def movies_status_cluster(movies_plot, status, max_cluster=20):
+    edc_dis_max = 20
+    edc_dis_min = 0
+    cur_iterate = 0
+    max_iterate = 100
+    continue_flag = True
+    while cur_iterate <= max_iterate and continue_flag:
+        status_cluster = []
+        edc_dis = (edc_dis_max + edc_dis_min) / 2
+        # print("threshold searching iteration epoch {cur_iterate}, current threshold {cur_th}, max iteration {max}"
+        #       .format(cur_iterate=cur_iterate, cur_th=edc_dis, max=max_iterate))
+        for i, p_i in enumerate(movies_plot.keys()):
+            movie_plot = movies_plot[p_i]
+            movie_status = movie_plot.down_sample_status
+            char_index = movie_plot.main_char_index
+            compare_cluster(status_cluster, movie_status, p_i, char_index, status, edc_dis)
+            if len(status_cluster) > max_cluster and i < len(movies_plot.keys())-1:
+                edc_dis_min = edc_dis
+                break
+            elif len(status_cluster) < max_cluster and i == len(movies_plot.keys())-1:
+                edc_dis_max = edc_dis
+                break
+            elif len(status_cluster) == max_cluster and i == len(movies_plot.keys())-1:
+                continue_flag = False
+                break
+        print('number of cluster {}'.format(len(status_cluster)))
+        if cur_iterate == max_iterate or not continue_flag:
+            status_cluster.sort(key=lambda x: len(x.project_ids), reverse=True)
+        cur_iterate += 1
+
+    return status_cluster, edc_dis
 
 
-def plot_main(movies, cluster_plt=False, project_id=None, status=None, all_movie=False):
-    # movies_plot = prepare_movie_plot_data(movies, save=False)
-    movies_plot = load_data('statistics_collection/data/', 'movie_plot')
+def split_cluster_group(status_cluster, status_index):
+    cluster_group = {}
+    for cls in status_cluster:
+        if len(cls.project_ids) < 3:
+            if "0_2" not in cluster_group.keys():
+                cluster_group['0_2'] = []
+                cluster_group['0_2'].append(cls)
+            else:
+                cluster_group['0_2'].append(cls)
+        if 3 <= len(cls.project_ids) < 9:
+            if "3_8" not in cluster_group.keys():
+                cluster_group['3_8'] = []
+                cluster_group['3_8'].append(cls)
+            else:
+                cluster_group['3_8'].append(cls)
+        if 9 < len(cls.project_ids):
+            if "9_n" not in cluster_group.keys():
+                cluster_group['9_n'] = []
+                cluster_group['9_n'].append(cls)
+            else:
+                cluster_group['9_n'].append(cls)
 
-    status_cluster = movies_status_cluster(movies_plot, status)
+    for cls_group in cluster_group.keys():
+        x = np.arange(len(cluster_group[cls_group][0].cluster))
+        for cls in cluster_group[cls_group]:
+            plt.plot(x, cls.cluster, c=np.random.rand(3, ), label='cluster id : {}, movie number : {}'
+                     .format(cls.project_ids[0], len(cls.project_ids)))
+        plt.title('Cluster movies number range {m_range}'
+                  .format(m_range=cls_group))
+        plt.xlabel('time')
+        plt.ylabel('level')
+        plt.legend(loc="upper left")
+        plt.savefig('statistics_collection/plot_data/cluster_group/cluster_movie_range{m_range}.png'
+                    .format(m_range=cls_group))
+        plt.clf()
+
+
+def plot_main(movies, n=10, cluster_plt=False, project_id=None, status=None, all_movie=False):
+    movies_plot = prepare_movie_plot_data(movies, n=n, save=False)
+    # movies_plot = load_data('statistics_collection/data/', 'movie_plot')
+
+    status_cluster, edc_dis = movies_status_cluster(movies_plot, status)
+    print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
+          .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
 
     if all_movie:
         plot_all(movies_plot, status)
@@ -172,6 +230,12 @@ def plot_main(movies, cluster_plt=False, project_id=None, status=None, all_movie
     elif cluster_plt:
         for cls in status_cluster:
             cls.cluster_plot(status)
+
+        # the cluster contains most movies
+        # status_cluster[0].rep_cluster_plot(status)
+
+        split_cluster_group(status_cluster, status)
+
     else:
         print("plot args wrong")
     pass

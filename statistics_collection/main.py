@@ -295,7 +295,7 @@ def main():
 
     error_check(movies_smf)
 
-    plot_main(movies_smf, cluster_plt=True, status=4, all_movie=False)
+    plot_main(movies_smf, n=15, cluster_plt=True, status=4, all_movie=False)
 
     # count_process(movies_smf, today)
 
