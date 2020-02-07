@@ -198,7 +198,7 @@ def split_cluster_group(status_cluster, status_index):
     for cls_group in cluster_group.keys():
         x = np.arange(len(cluster_group[cls_group][0].cluster))
         for cls in cluster_group[cls_group]:
-            plt.plot(x, cls.cluster, c=np.random.rand(3, ), label='cls:{},m_num:{}'
+            plt.plot(x, cls.cluster, c=np.random.rand(3, ), label='c:{},m:{}'
                      .format(cls.project_ids[0], len(cls.project_ids)))
         plt.title('Cluster movies number range {m_range}'
                   .format(m_range=cls_group))
@@ -224,7 +224,7 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
     count_c = 0
     coverage = 0
     cur_max_coverage = 0
-    while coverage < 75 and count_c < 50:
+    while count_c < 50:
         print('epoch {}'.format(count_c))
         selected_status_cluster = []
         selected_movie = movies_plot
@@ -251,7 +251,7 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
 
     print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num} clustered {clsed_n}"
           .format(st_id=status, dis_th=min_edc, cls_num=len(selected_status_max_cluster)
-                  , clsed_n=coverage))
+                  , clsed_n=cur_max_coverage))
 
     if all_movie:
         plot_all(movies_plot, status)
