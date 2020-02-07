@@ -3,6 +3,7 @@ import random
 import os
 import glob
 from scipy.interpolate import interp1d
+from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 from pathlib import Path
 from scipy import spatial
@@ -219,7 +220,7 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
 
     selected_status_cluster = []
     selected_movie = movies_plot
-    min_edc = 6
+    min_edc = 8
     # while len(selected_movie) > 5:
     count_c = 0
     coverage = 0
@@ -248,7 +249,6 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
             selected_status_max_cluster = selected_status_cluster
         count_c += 1
 
-
     print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num} clustered {clsed_n}"
           .format(st_id=status, dis_th=min_edc, cls_num=len(selected_status_max_cluster)
                   , clsed_n=cur_max_coverage))
@@ -267,28 +267,3 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
         print("plot args wrong")
     pass
 
-
-def extra_process(status_cluster, movies_plot, status):
-    cluster_projects = {}
-    for cluster in status_cluster:
-        cluster_projects[cluster.project_ids[0]] = cluster.project_ids
-
-    selected_movie_plot = {}
-    for p_id in cluster_projects[87]:
-        selected_movie_plot[p_id] = movies_plot[p_id]
-
-    status_cluster, edc_dis = movies_status_cluster(selected_movie_plot, status, max_cluster=15)
-    print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
-          .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
-
-    for cls in status_cluster:
-        cls.cluster_plot(status)
-        cls.head_ranked_plot(status)
-
-        # the cluster contains most movies
-        # status_cluster[0].rep_cluster_plot(status)
-
-        split_cluster_group(status_cluster, status)
-
-    else:
-        print("plot args wrong")

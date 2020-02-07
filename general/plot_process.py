@@ -151,7 +151,7 @@ def compare_cluster(status_cluster, movie_status, project_id, char_index, status
 # find target cluster number
 def movies_status_cluster(movies_plot, status, max_cluster=20):
     #
-    edc_dis_max = 10
+    edc_dis_max = 20
     edc_dis_min = 0
     cur_iterate = 0
     max_iterate = 50
@@ -238,10 +238,6 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
     status_cluster, edc_dis = movies_status_cluster(movies_plot, status, max_cluster=max_cluster)
     print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
           .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
-    # ==================================================================================
-    clear_folders("statistics_collection/plot_data/status_{st_id}/*/*".format(st_id=status))
-    extra_process(status_cluster, movies_plot, status=status)
-    # ==================================================================================
 
     if all_movie:
         plot_all(movies_plot, status)
@@ -261,29 +257,3 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
     else:
         print("plot args wrong")
     pass
-
-
-def extra_process(status_cluster, movies_plot, status):
-    cluster_projects = {}
-    for cluster in status_cluster:
-        cluster_projects[cluster.project_ids[0]] = cluster.project_ids
-
-    selected_movie_plot = {}
-    for p_id in cluster_projects[87]:
-        selected_movie_plot[p_id] = movies_plot[p_id]
-
-    status_cluster, edc_dis = movies_status_cluster(selected_movie_plot, status, max_cluster=15)
-    print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
-          .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
-
-    for cls in status_cluster:
-        cls.cluster_plot(status)
-        cls.head_ranked_plot(status)
-
-        # the cluster contains most movies
-        # status_cluster[0].rep_cluster_plot(status)
-
-        split_cluster_group(status_cluster, status)
-
-    else:
-        print("plot args wrong")

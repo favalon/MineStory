@@ -20,6 +20,9 @@ class Cluster:
         self.cluster = cluster_sum/len(self.contain)
         self.project_ids.append(p_id)
 
+    def update_average_cluster(self, cluster):
+        self.cluster = cluster
+
     def cluster_plot(self, status_index):
         marker = itertools.cycle((',', '+', '.', 'o', '*'))
         x = np.arange(0, len(self.cluster))
