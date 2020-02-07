@@ -149,13 +149,16 @@ def compare_cluster(status_cluster, movie_status, project_id, char_index, status
 
 
 # find target cluster number
-def movies_status_cluster(movies_plot, status, min_threshold=10):
+def movies_status_cluster(movies_plot, status, min_threshold=10, iterate=0):
 
     status_cluster = []
     # print("threshold searching iteration epoch {cur_iterate}, current threshold {cur_th}, max iteration {max}"
     #       .format(cur_iterate=cur_iterate, cur_th=edc_dis, max=max_iterate))
-    keys = list(movies_plot.keys())
-    random.shuffle(keys)
+    if iterate == 0:
+        keys = list(movies_plot.keys())
+    else:
+        keys = list(movies_plot.keys())
+        random.shuffle(keys)
     for p_i in keys:
         movie_plot = movies_plot[p_i]
         movie_status = movie_plot.down_sample_status
@@ -195,7 +198,7 @@ def split_cluster_group(status_cluster, status_index):
     for cls_group in cluster_group.keys():
         x = np.arange(len(cluster_group[cls_group][0].cluster))
         for cls in cluster_group[cls_group]:
-            plt.plot(x, cls.cluster, c=np.random.rand(3, ), label='cluster id : {}, movie number : {}'
+            plt.plot(x, cls.cluster, c=np.random.rand(3, ), label='cls:{},m_num:{}'
                      .format(cls.project_ids[0], len(cls.project_ids)))
         plt.title('Cluster movies number range {m_range}'
                   .format(m_range=cls_group))
@@ -216,36 +219,49 @@ def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None,
 
     selected_status_cluster = []
     selected_movie = movies_plot
-    min_edc = 6.3
+    min_edc = 6
     # while len(selected_movie) > 5:
-    iterate = 0
-    while iterate < 200:
+    count_c = 0
+    coverage = 0
+    cur_max_coverage = 0
+    while coverage < 75 and count_c < 50:
+        print('epoch {}'.format(count_c))
+        selected_status_cluster = []
+        selected_movie = movies_plot
+        iterate = 0
+        while iterate < 200:
+            status_cluster = movies_status_cluster(selected_movie, status,  min_threshold=min_edc, iterate=iterate)
+            selected_movie = {}
+            for cluster in status_cluster:
+                if 3 < len(cluster.project_ids) < 9:
+                    selected_status_cluster.append(cluster)
+                    continue
+                else:
+                    for p_id in cluster.project_ids:
+                        selected_movie[p_id] = movies_plot[p_id]
 
-        status_cluster = movies_status_cluster(selected_movie, status,  min_threshold=min_edc)
-        selected_movie = {}
-        for cluster in status_cluster:
-            if 4 < len(cluster.project_ids) < 9:
-                selected_status_cluster.append(cluster)
-                continue
-            else:
-                for p_id in cluster.project_ids:
-                    selected_movie[p_id] = movies_plot[p_id]
+            iterate += 1
+        coverage = len(movies_plot.keys()) - len(selected_movie.keys())
+        if coverage > cur_max_coverage:
+            print("update max coverage to {}".format(coverage))
+            cur_max_coverage = coverage
+            selected_status_max_cluster = selected_status_cluster
+        count_c += 1
 
-        iterate += 1
 
     print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num} clustered {clsed_n}"
-          .format(st_id=status, dis_th=min_edc, cls_num=len(selected_status_cluster)
-                  , clsed_n=len(movies_plot.keys())-len(selected_movie.keys())))
+          .format(st_id=status, dis_th=min_edc, cls_num=len(selected_status_max_cluster)
+                  , clsed_n=coverage))
 
     if all_movie:
         plot_all(movies_plot, status)
     elif project_id is not None:
         plot_by_id(movies_plot, project_id, status)
     elif cluster_plt:
-        for cls in selected_status_cluster:
+        for cls in selected_status_max_cluster:
             cls.cluster_plot(status)
             cls.head_ranked_plot(status)
-        split_cluster_group(selected_status_cluster, status)
+        split_cluster_group(selected_status_max_cluster, status)
 
     else:
         print("plot args wrong")
