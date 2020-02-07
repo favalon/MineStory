@@ -7,7 +7,7 @@ from general.tools import save_data, load_data, get_data_url, get_data_txt, get_
 from general.tools import summary_save, summary_print
 from general.single_movie_process import story_first_process
 from greed_process.main import main as greed_process
-from general.plot_process import plot_main
+from general.plot_process_2 import plot_main
 from datetime import date
 import glob
 from collections import namedtuple

@@ -149,41 +149,20 @@ def compare_cluster(status_cluster, movie_status, project_id, char_index, status
 
 
 # find target cluster number
-def movies_status_cluster(movies_plot, status, max_cluster=20):
-    #
-    edc_dis_max = 10
-    edc_dis_min = 0
-    cur_iterate = 0
-    max_iterate = 50
-    continue_flag = True
-    while cur_iterate <= max_iterate and continue_flag:
-        status_cluster = []
-        edc_dis = (edc_dis_max + edc_dis_min) / 2
-        # print("threshold searching iteration epoch {cur_iterate}, current threshold {cur_th}, max iteration {max}"
-        #       .format(cur_iterate=cur_iterate, cur_th=edc_dis, max=max_iterate))
-        for i, p_i in enumerate(movies_plot.keys()):
-            movie_plot = movies_plot[p_i]
-            movie_status = movie_plot.down_sample_status
-            char_index = movie_plot.main_char_index
-            compare_cluster(status_cluster, movie_status, p_i, char_index, status, edc_dis)
-            if len(status_cluster) > max_cluster and i < len(movies_plot.keys())-1:
-                edc_dis_min = edc_dis
-                break
-            elif len(status_cluster) < max_cluster and i == len(movies_plot.keys())-1:
-                edc_dis_max = edc_dis
-                break
-            elif len(status_cluster) == max_cluster and i == len(movies_plot.keys())-1:
-                continue_flag = False
-                break
-        print('number of cluster {}'.format(len(status_cluster)))
-        if cur_iterate == max_iterate or not continue_flag:
-            status_cluster.sort(key=lambda x: len(x.project_ids), reverse=True)
-        cur_iterate += 1
+def movies_status_cluster(movies_plot, status, min_threshold=10):
 
-    return status_cluster, edc_dis
+    status_cluster = []
+    # print("threshold searching iteration epoch {cur_iterate}, current threshold {cur_th}, max iteration {max}"
+    #       .format(cur_iterate=cur_iterate, cur_th=edc_dis, max=max_iterate))
+    keys = list(movies_plot.keys())
+    random.shuffle(keys)
+    for p_i in keys:
+        movie_plot = movies_plot[p_i]
+        movie_status = movie_plot.down_sample_status
+        char_index = movie_plot.main_char_index
+        compare_cluster(status_cluster, movie_status, p_i, char_index, status, min_threshold)
 
-
-
+    return status_cluster
 
 
 def split_cluster_group(status_cluster, status_index):
@@ -233,30 +212,40 @@ def split_cluster_group(status_cluster, status_index):
 def plot_main(movies, n=10,  max_cluster=30, cluster_plt=False, project_id=None, status=None, all_movie=False):
     movies_plot = prepare_movie_plot_data(movies, n=n, save=False)
     # movies_plot = load_data('statistics_collection/data/', 'movie_plot')
+    clear_folders("statistics_collection/plot_data/status_{st_id}/*/*".format(st_id=status))
 
-    clear_folders("statistics_collection/plot_data/status_{st_id}/*/*".format(st_id=status))
-    status_cluster, edc_dis = movies_status_cluster(movies_plot, status, max_cluster=max_cluster)
-    print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
-          .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
-    # ==================================================================================
-    clear_folders("statistics_collection/plot_data/status_{st_id}/*/*".format(st_id=status))
-    extra_process(status_cluster, movies_plot, status=status)
-    # ==================================================================================
+    selected_status_cluster = []
+    selected_movie = movies_plot
+    min_edc = 6.3
+    # while len(selected_movie) > 5:
+    iterate = 0
+    while iterate < 200:
+
+        status_cluster = movies_status_cluster(selected_movie, status,  min_threshold=min_edc)
+        selected_movie = {}
+        for cluster in status_cluster:
+            if 4 < len(cluster.project_ids) < 9:
+                selected_status_cluster.append(cluster)
+                continue
+            else:
+                for p_id in cluster.project_ids:
+                    selected_movie[p_id] = movies_plot[p_id]
+
+        iterate += 1
+
+    print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num} clustered {clsed_n}"
+          .format(st_id=status, dis_th=min_edc, cls_num=len(selected_status_cluster)
+                  , clsed_n=len(movies_plot.keys())-len(selected_movie.keys())))
 
     if all_movie:
         plot_all(movies_plot, status)
     elif project_id is not None:
         plot_by_id(movies_plot, project_id, status)
     elif cluster_plt:
-        for cls in status_cluster:
+        for cls in selected_status_cluster:
             cls.cluster_plot(status)
-            if len(cls.project_ids) > 3:
-                cls.head_ranked_plot(status)
-
-        # the cluster contains most movies
-        # status_cluster[0].rep_cluster_plot(status)
-
-        split_cluster_group(status_cluster, status)
+            cls.head_ranked_plot(status)
+        split_cluster_group(selected_status_cluster, status)
 
     else:
         print("plot args wrong")

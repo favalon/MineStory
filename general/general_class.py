@@ -78,10 +78,32 @@ class Cluster:
         plt.xlabel('time')
         plt.ylabel('level')
         plt.ylim(0, 4)
-        plt.savefig(path_best_rep+'best_rep/cluster_{cluster_id}_rep_movies_status{status_index}.png'
+        plt.savefig(path_best_rep+'cluster_{cluster_id}_rep_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
 
+    def head_ranked_plot(self, status_index):
+        head_num = 4
+        marker = itertools.cycle((',', '+', '.', 'o', '*'))
+        x = np.arange(0, len(self.cluster))
+        for i, status in enumerate(self.contain):
+            if i < head_num:
+                plt.plot(x, status, c=np.random.rand(3, ), label='movies_id:{}'.format(self.project_ids[i]))
+
+        plt.plot(x, self.cluster, c=np.random.rand(3, ), marker='o', linewidth=3.0, label='average')
+
+        path_head_rep = "statistics_collection/plot_data/status_{st_id}/head_rep/".format(st_id=status_index)
+        Path(path_head_rep).mkdir(parents=True, exist_ok=True)
+
+        plt.title('Cluster ID:{cluster_id}, Status:{status_index} Representation Plot, {movie_num} Movies in this Cluster'
+                  .format(cluster_id=self.project_ids[0], status_index=status_index, movie_num=len(self.project_ids)))
+        plt.xlabel('time')
+        plt.ylabel('level')
+        plt.ylim(0, 4)
+        plt.legend()
+        plt.savefig(path_head_rep+'{m_num}_cluster_{cluster_id}_rep_movies_status{status_index}.png'
+                    .format(m_num=len(self.project_ids),  cluster_id=self.project_ids[0], status_index=status_index))
+        plt.clf()
 
 class MoviePlot:
     def __init__(self, p_id, p_name, main_char_index, movie_status, resample_status,normalize_axis):
@@ -290,6 +312,7 @@ def save_status(status, n_status, char_num):
 
     if '99999' in n_status.keys():
         n_status['99999'] = n_status['99999'] + empty_count
+
 
 def get_path(status, path):
     for i in range(1, status.shape[0]):
