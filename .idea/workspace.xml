@@ -2,80 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e52d320c-d5a4-4f6f-8abb-1bafe4bd4ffc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/general_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/general_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/plot_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/plot_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/general/tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics_collection/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collection/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_102_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_102_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_103_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_103_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_107_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_107_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_124_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_124_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_145_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_145_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_156_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_156_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_167_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_167_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_183_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_183_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_189_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_189_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_209_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_209_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_216_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_216_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_220_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_220_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_222_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_222_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_224_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_224_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_233_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_233_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_235_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_235_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_243_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_243_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_87_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_87_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_94_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_94_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_95_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_95_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_98_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/all_plot/cluster_98_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_102_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_103_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_107_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_124_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_145_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_156_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_167_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_183_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_189_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_209_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_216_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_220_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_222_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_224_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_233_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_235_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_243_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_87_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_94_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_95_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_average_rep/cluster_98_rep_movies_status4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_group/cluster_movie_range0_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_group/cluster_movie_range3_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_group/cluster_movie_range9_n.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_group_data/cluster_0_2_data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_group_data/cluster_3_8_data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collection/plot_data/cluster_group_data/cluster_9_n_data" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,30 +170,30 @@
     <state width="1220" height="467" key="DebuggerActiveHint/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674456188" />
     <state width="1368" height="740" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1580950516572" />
     <state width="1525" height="589" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1581030355977" />
-    <state width="1899" height="243" key="GridCell.Tab.0.bottom" timestamp="1581037843281">
+    <state width="1899" height="243" key="GridCell.Tab.0.bottom" timestamp="1581038153036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580963075261" />
-    <state width="1899" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581037843281" />
-    <state width="1899" height="243" key="GridCell.Tab.0.center" timestamp="1581037843281">
+    <state width="1899" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581038153036" />
+    <state width="1899" height="243" key="GridCell.Tab.0.center" timestamp="1581038153036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.center/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580963075260" />
-    <state width="1899" height="243" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581037843281" />
-    <state width="1899" height="243" key="GridCell.Tab.0.left" timestamp="1581037843281">
+    <state width="1899" height="243" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581038153036" />
+    <state width="1899" height="243" key="GridCell.Tab.0.left" timestamp="1581038153036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.left/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580963075259" />
-    <state width="1899" height="243" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581037843281" />
-    <state width="1899" height="243" key="GridCell.Tab.0.right" timestamp="1581037843281">
+    <state width="1899" height="243" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581038153036" />
+    <state width="1899" height="243" key="GridCell.Tab.0.right" timestamp="1581038153036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1515" height="147" key="GridCell.Tab.0.right/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674408601" />
     <state width="1515" height="358" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580963075261" />
-    <state width="1899" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581037843281" />
+    <state width="1899" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581038153036" />
     <state width="1899" height="266" key="GridCell.Tab.1.bottom" timestamp="1581037721189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

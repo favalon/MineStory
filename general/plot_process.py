@@ -218,7 +218,7 @@ def split_cluster_group(status_cluster, status_index):
         plt.xlabel('time')
         plt.ylabel('level')
         plt.ylim(0, 4)
-        # plt.legend(loc="upper left")
+        plt.legend(loc="upper left")
         plt.savefig(path_cluster_group + 'cluster_movie_range{m_range}.png'
                     .format(m_range=cls_group))
         plt.clf()
