@@ -1,10 +1,13 @@
 import numpy as np
 import random
+import os
+import glob
 from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
+from pathlib import Path
 from scipy import spatial
 import itertools
-from general.tools import save_data, load_data
+from general.tools import save_data, load_data, clear_folders
 
 from general.general_class import MoviePlot, Cluster
 
@@ -200,6 +203,11 @@ def split_cluster_group(status_cluster, status_index):
             else:
                 cluster_group['9_n'].append(cls)
 
+    path_cluster_group = "statistics_collection/plot_data/status_{st_id}/cluster_group/".format(st_id=status_index)
+    Path(path_cluster_group).mkdir(parents=True, exist_ok=True)
+    path_cluster_group_data = "statistics_collection/plot_data/status_{st_id}/cluster_group_data/".format(st_id=status_index)
+    Path(path_cluster_group_data).mkdir(parents=True, exist_ok=True)
+
     for cls_group in cluster_group.keys():
         x = np.arange(len(cluster_group[cls_group][0].cluster))
         for cls in cluster_group[cls_group]:
@@ -211,17 +219,18 @@ def split_cluster_group(status_cluster, status_index):
         plt.ylabel('level')
         plt.ylim(0, 4)
         # plt.legend(loc="upper left")
-        plt.savefig('statistics_collection/plot_data/cluster_group/cluster_movie_range{m_range}.png'
+        plt.savefig(path_cluster_group + 'cluster_movie_range{m_range}.png'
                     .format(m_range=cls_group))
         plt.clf()
-        save_data('statistics_collection/plot_data/cluster_group_data', 'cluster_{}_data'.format(cls_group), cls_group)
+        save_data(path_cluster_group_data, 'cluster_{}_data'.format(cls_group), cls_group)
 
 
-def plot_main(movies, n=10, cluster_plt=False, project_id=None, status=None, all_movie=False):
+def plot_main(movies, n=10,  max_cluster=20, cluster_plt=False, project_id=None, status=None, all_movie=False):
     movies_plot = prepare_movie_plot_data(movies, n=n, save=False)
     # movies_plot = load_data('statistics_collection/data/', 'movie_plot')
 
-    status_cluster, edc_dis = movies_status_cluster(movies_plot, status, max_cluster=20)
+    clear_folders("statistics_collection/plot_data/status_{st_id}/*/*".format(st_id=status))
+    status_cluster, edc_dis = movies_status_cluster(movies_plot, status, max_cluster=max_cluster)
     print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
           .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
 

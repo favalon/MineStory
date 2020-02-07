@@ -1,6 +1,7 @@
 import numpy as np
 import itertools
 import matplotlib.pyplot as plt
+from pathlib import Path
 import json
 from scipy import spatial
 
@@ -25,12 +26,20 @@ class Cluster:
         for status in self.contain:
             plt.plot(x, status, c=np.random.rand(3, ), marker=next(marker))
 
+        path_all_plot = "statistics_collection/plot_data/status_{st_id}/all_plot/".format(st_id=status_index)
+        path_cluster_rep = "statistics_collection/plot_data/status_{st_id}/cluster_average_rep/".format(st_id=status_index)
+
+        Path(path_all_plot)\
+            .mkdir(parents=True, exist_ok=True)
+        Path(path_cluster_rep)\
+            .mkdir(parents=True, exist_ok=True)
+
         plt.title('Cluster ID:{cluster_id} Status:{status_index} Plot, {movie_num} Movies in this Cluster '
                   .format(cluster_id=self.project_ids[0], status_index=status_index, movie_num=len(self.project_ids)))
         plt.xlabel('time')
         plt.ylabel('level')
         plt.ylim(0, 4)
-        plt.savefig('statistics_collection/plot_data/all_plot/cluster_{cluster_id}_movies_status{status_index}.png'
+        plt.savefig(path_all_plot + 'cluster_{cluster_id}_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
 
         plt.clf()
@@ -41,8 +50,7 @@ class Cluster:
         plt.xlabel('time')
         plt.ylabel('level')
         plt.ylim(0, 4)
-        plt.savefig('statistics_collection/plot_data/cluster_average_rep/'
-                    'cluster_{cluster_id}_rep_movies_status{status_index}.png'
+        plt.savefig(path_cluster_rep + 'cluster_{cluster_id}_rep_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
 
@@ -52,12 +60,15 @@ class Cluster:
         for status in self.contain:
             plt.plot(x, status, c=np.random.rand(3, ), marker=next(marker))
 
+        path_best_rep = "statistics_collection/plot_data/status_{st_id}/best_rep/".format(st_id=status_index)
+        Path(path_best_rep).mkdir(parents=True, exist_ok=True)
+
         plt.title('Cluster ID:{cluster_id} Status:{status_index} Plot '
                   .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.xlabel('time')
         plt.ylabel('level')
         plt.ylim(0, 4)
-        plt.savefig('statistics_collection/plot_data/best_rep/cluster_{cluster_id}_movies_status{status_index}.png'
+        plt.savefig(path_best_rep+'cluster_{cluster_id}_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
 
         plt.clf()
@@ -67,7 +78,7 @@ class Cluster:
         plt.xlabel('time')
         plt.ylabel('level')
         plt.ylim(0, 4)
-        plt.savefig('statistics_collection/plot_data/best_rep/cluster_{cluster_id}_rep_movies_status{status_index}.png'
+        plt.savefig(path_best_rep+'best_rep/cluster_{cluster_id}_rep_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
 

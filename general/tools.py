@@ -1,4 +1,5 @@
 import os
+import glob
 import pickle
 import urllib.request
 import json
@@ -52,6 +53,11 @@ def load_data(path, fn):
             data = pickle.load(f)
     return data
 
+
+def clear_folders(path):
+    files = glob.glob(path)
+    for f in files:
+        os.remove(f)
 
 def summary_save(movies, n_status, path, today):
     save_data('statistics_collection/data_{}'.format(today), 'movies_data', movies)

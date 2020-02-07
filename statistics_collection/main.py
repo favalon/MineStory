@@ -9,6 +9,7 @@ from general.single_movie_process import story_first_process
 from greed_process.main import main as greed_process
 from general.plot_process import plot_main
 from datetime import date
+import glob
 from collections import namedtuple
 
 ACCESS_ROLE = 'MainCharacter'
@@ -281,6 +282,7 @@ def error_check(movies):
 
     pass
 
+
 def main():
     today = date.today()
 
@@ -295,7 +297,7 @@ def main():
 
     error_check(movies_smf)
 
-    plot_main(movies_smf, n=100, cluster_plt=True, status=4, all_movie=False)
+    plot_main(movies_smf, n=100, max_cluster=22, cluster_plt=True, status=3, all_movie=False)
 
     # count_process(movies_smf, today)
 
