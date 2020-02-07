@@ -25,20 +25,24 @@ class Cluster:
         for status in self.contain:
             plt.plot(x, status, c=np.random.rand(3, ), marker=next(marker))
 
-        plt.title('Cluster ID:{cluster_id} Status:{status_index} Plot '
-                  .format(cluster_id=self.project_ids[0], status_index=status_index))
+        plt.title('Cluster ID:{cluster_id} Status:{status_index} Plot, {movie_num} Movies in this Cluster '
+                  .format(cluster_id=self.project_ids[0], status_index=status_index, movie_num=len(self.project_ids)))
         plt.xlabel('time')
         plt.ylabel('level')
+        plt.ylim(0, 4)
         plt.savefig('statistics_collection/plot_data/all_plot/cluster_{cluster_id}_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
 
         plt.clf()
         plt.plot(x, self.cluster, c=np.random.rand(3, ), marker=next(marker))
-        plt.title('Cluster ID:{cluster_id}, Status:{status_index} Representation Plot, {movie_num} Movies in this Cluster'
+        plt.title('Cluster ID:{cluster_id}, Status:{status_index} Representation Plot, '
+                  '{movie_num} Movies in this Cluster'
                   .format(cluster_id=self.project_ids[0], status_index=status_index, movie_num=len(self.project_ids)))
         plt.xlabel('time')
         plt.ylabel('level')
-        plt.savefig('statistics_collection/plot_data/all_plot/cluster_{cluster_id}_rep_movies_status{status_index}.png'
+        plt.ylim(0, 4)
+        plt.savefig('statistics_collection/plot_data/cluster_average_rep/'
+                    'cluster_{cluster_id}_rep_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
 
@@ -52,6 +56,7 @@ class Cluster:
                   .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.xlabel('time')
         plt.ylabel('level')
+        plt.ylim(0, 4)
         plt.savefig('statistics_collection/plot_data/best_rep/cluster_{cluster_id}_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
 
@@ -61,9 +66,11 @@ class Cluster:
                   .format(cluster_id=self.project_ids[0], status_index=status_index, movie_num=len(self.project_ids)))
         plt.xlabel('time')
         plt.ylabel('level')
+        plt.ylim(0, 4)
         plt.savefig('statistics_collection/plot_data/best_rep/cluster_{cluster_id}_rep_movies_status{status_index}.png'
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
+
 
 class MoviePlot:
     def __init__(self, p_id, p_name, main_char_index, movie_status, resample_status,normalize_axis):

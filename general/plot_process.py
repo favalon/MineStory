@@ -209,17 +209,19 @@ def split_cluster_group(status_cluster, status_index):
                   .format(m_range=cls_group))
         plt.xlabel('time')
         plt.ylabel('level')
-        plt.legend(loc="upper left")
+        plt.ylim(0, 4)
+        # plt.legend(loc="upper left")
         plt.savefig('statistics_collection/plot_data/cluster_group/cluster_movie_range{m_range}.png'
                     .format(m_range=cls_group))
         plt.clf()
+        save_data('statistics_collection/plot_data/cluster_group_data', 'cluster_{}_data'.format(cls_group), cls_group)
 
 
 def plot_main(movies, n=10, cluster_plt=False, project_id=None, status=None, all_movie=False):
     movies_plot = prepare_movie_plot_data(movies, n=n, save=False)
     # movies_plot = load_data('statistics_collection/data/', 'movie_plot')
 
-    status_cluster, edc_dis = movies_status_cluster(movies_plot, status)
+    status_cluster, edc_dis = movies_status_cluster(movies_plot, status, max_cluster=20)
     print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
           .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
 
