@@ -51,7 +51,27 @@ def load_data(path, fn):
     if os.path.isfile(os.path.join(path, fn)):
         with open(os.path.join(path,fn), 'rb') as f:
             data = pickle.load(f)
+    else:
+        print("path wrong")
     return data
+
+
+def getIndexPositions(listOfElements, element):
+    ''' Returns the indexes of all occurrences of give element in
+    the list- listOfElements '''
+    indexPosList = []
+    indexPos = 0
+    while True:
+        try:
+            # Search for item in list from indexPos to the end of list
+            indexPos = listOfElements.index(element, indexPos)
+            # Add the index position in list
+            indexPosList.append(indexPos)
+            indexPos += 1
+        except ValueError as e:
+            break
+
+    return indexPosList
 
 
 def clear_folders(path):

@@ -12,7 +12,7 @@ from datetime import date
 import glob
 from collections import namedtuple
 
-ACCESS_ROLE = 'MainCharacter'
+ACCESS_ROLE = 'Opposites'
 
 FLAG_ALL_ROLE = False
 
@@ -177,7 +177,7 @@ def count_each_char_3_path(n_3_path_class, char_index, movie):
 
 
 def count_status_path(movie, n_status, n_path, n_3_path):
-    char_index = movie['MainCharacter_flag'].keys()[0]
+    char_index = movie['{}_flag'.format(ACCESS_ROLE)].keys()[0]
     chars_index = [0]
     for char_index in chars_index:
         char_class = ''.join(movie['story_first_character_flag'][char_index])
@@ -243,7 +243,7 @@ def count_process(movies_smf, today):
     for p3t in n_3_path:
         n_3_path_num += len(n_3_path[p3t])
 
-    summary_print('MainCharacter', n_status_num, n_path_num, n_status, n_path, today)
+    summary_print(ACCESS_ROLE, n_status_num, n_path_num, n_status, n_path, today)
     # summary_save(movies_smf, n_status, n_path,  today)
     print(n_3_path_num)
     print(json.dumps(n_3_path, indent=4, sort_keys=True))
@@ -277,10 +277,8 @@ def greed_path_process(movies, today):
 
 def error_check(movies):
     for movie in movies:
-        if 'MainCharacter_flag' not in movie.keys():
+        if '{}_flag'.format(ACCESS_ROLE) not in movie.keys():
             print(movie['id'])
-
-    pass
 
 
 def main():
@@ -297,11 +295,12 @@ def main():
 
     error_check(movies_smf)
 
-    plot_main(movies_smf, n=100, max_cluster=20, cluster_plt=True, status=4, all_movie=False)
+    plot_main(movies_smf, n=11, access_role=ACCESS_ROLE, n_clusters=10, cluster_plt=True, all_movie=False)
 
     # count_process(movies_smf, today)
 
     # greed_path_process(movies_smf, today)
+    pass
 
 
 if __name__ == '__main__':

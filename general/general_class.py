@@ -2,6 +2,7 @@ import numpy as np
 import itertools
 import matplotlib.pyplot as plt
 from pathlib import Path
+from general.tools import getIndexPositions
 import json
 from scipy import spatial
 
@@ -108,6 +109,7 @@ class Cluster:
                     .format(m_num=len(self.project_ids),  cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
 
+
 class MoviePlot:
     def __init__(self, p_id, p_name, main_char_index, movie_status, resample_status,normalize_axis):
         self.project_id = p_id
@@ -130,6 +132,174 @@ class MoviePlot:
                     # print(pointer)
                     self.down_sample_status[c_i][st_i][s_i] = self.resample_status[c_i][st_i][pointer]
                     pointer += adder
+
+    def down_sample_strict(self, n=100):
+        resample_len = self.resample_status.shape[-1]
+        adder = int(resample_len/n)
+        self.down_sample_status = np.zeros((self.resample_status.shape[0], self.resample_status.shape[1], n))
+        for c_i in range(self.resample_status.shape[0]):
+            for st_i in range(self.resample_status.shape[1]):
+                cur_status = self.resample_status[c_i][st_i].tolist()
+                turing_point_y = []
+                turing_point_x = []
+                for i, st in enumerate(cur_status):
+                    if i == 0:
+                        turing_point_x.append(0)
+                        turing_point_y.append(st)
+                    else:
+                        if cur_status[i-1] != st:
+                            turing_point_x.append(i / (len(cur_status) - resample_len%n))
+                            turing_point_y.append(st)
+
+                if len(turing_point_x) > n:
+                    print('n < turning point, unable to down sample {}, try other n'.format(self.project_id))
+                    return
+                fit_turning_point = [-1 for x in range(n)]
+                fited_turing_point = [(False, 0) for x in range(n)]
+                priority_order = []
+
+                turing_point_y_rank = list(set(turing_point_y))
+                start = 0
+                end = len(turing_point_y_rank) - 1
+                while True:
+                    if len(priority_order) == len(turing_point_y_rank):
+                        break
+                    priority_order.append(turing_point_y_rank[end])
+                    end -= 1
+                    if len(priority_order) == len(turing_point_y_rank):
+                        break
+                    priority_order.append(turing_point_y_rank[start])
+                    start += 1
+                    if len(priority_order) == len(turing_point_y_rank):
+                        break
+
+                for lvl in priority_order:
+                    if lvl not in turing_point_y:
+                        continue
+                    lv_index = getIndexPositions(turing_point_y, lvl)
+                    for i in lv_index:
+                        index = int(turing_point_x[i] * 10 + 0.5)
+                        if not fited_turing_point[index][0]:
+                            fit_turning_point[index] = turing_point_y[i]
+                            fited_turing_point[index] = (True, turing_point_x[i])
+                        elif turing_point_x[i] > fited_turing_point[index][1] and not fited_turing_point[index+1][0]:
+                            fit_turning_point[index+1] = turing_point_y[i]
+                            fited_turing_point[index+1] = (True, turing_point_x[i])
+                        elif turing_point_x[i] < fited_turing_point[index][1] and not fited_turing_point[index-1][0]:
+                            fit_turning_point[index - 1] = turing_point_y[i]
+                            fited_turing_point[index - 1] = (True, turing_point_x[i])
+
+                pointer = 0
+                for s_i in range(n):
+                    pointer += adder
+                    if not fited_turing_point[s_i][0]:
+                        self.down_sample_status[c_i][st_i][s_i] = self.resample_status[c_i][st_i][pointer]
+                    else:
+                        self.down_sample_status[c_i][st_i][s_i] = fit_turning_point[s_i]
+            print(self.down_sample_status[c_i][st_i])
+
+    def print_status_guide(self, char_index, st_index=None):
+        labels = ['H', 'A', 'F', 'C', 'G']
+
+        for s_i in range(1, self.down_sample_status.shape[-1]):
+            print('=== Scene {s_i} Status change Guide ==='.format(s_i=s_i))
+            for c_i in char_index:
+                start_status = []
+                end_status = []
+                select_status = []
+                for st_i in st_index[c_i]:
+                    select_status.append(labels[st_i])
+                    start_status.append(str(int(self.down_sample_status[c_i][st_i][s_i-1])))
+                    end_status.append(str(int(self.down_sample_status[c_i][st_i][s_i])))
+                guide = 'Character {c_i}\n' \
+                        'status: {s_s}\n' \
+                        'start:  {start}\n' \
+                        'end:    {end}\n'\
+                    .format(c_i=c_i, s_s=' '.join(select_status)
+                            , start=' '.join(start_status), end=' '.join(end_status))
+                print(guide)
+
+    def plot_status(self, char_index, down_sample=False, st_index=None):
+        if down_sample:
+            sample_status = self.down_sample_status
+            names = 'down_sample'
+        else:
+            sample_status = self.movie_status
+            names = 'original'
+        labels = ['health', 'attitude', 'change', 'crisis', 'goal']
+
+        if st_index is not None:
+            st_index_range = st_index
+        else:
+            st_index_range = [4, 3, 1, 2, 0]
+
+
+        color = ['r', 'g', 'k', 'navy', 'm']
+        marker = itertools.cycle((',', '+', '.', 'o', '*'))
+        visual_bias = [0.06, 0.03, 0, -0.03, -0.06]
+        line_style = ['-', '--', '-.', ':', 'dashdot']
+
+        for c_i in char_index:
+            x = np.arange(0, sample_status.shape[-1])
+            fig, ax = plt.subplots()
+            for st_i in st_index[c_i]:
+                status = sample_status[c_i][st_i]
+                c = color[st_i]
+                ax.scatter(x, status+visual_bias[st_i], s=10, c=c)
+                ax.plot(x, status+visual_bias[st_i], c=c, label=labels[st_i])
+                # if down_sample:
+                #     for i, value in enumerate(status):
+                #         ax.annotate(value, (x[i], status[i]))
+
+            path_single_movie_plot = "statistics_collection/plot_data/single_movie/{p_id}/{sample}/"\
+                .format(sample=names, p_id=self.project_id)
+            Path(path_single_movie_plot).mkdir(parents=True, exist_ok=True)
+            plt.title(
+                'Character : {char_index} Status : {st_range}'
+                .format(char_index=c_i, st_range=', '.join([str(x) for x in st_index_range])))
+
+            if down_sample:
+                ax.set_xticks(x)
+            plt.xlabel('time')
+            plt.ylabel('level')
+            plt.ylim(-0.5, 4.5)
+            plt.xlim(-0.5, len(x))
+            plt.legend()
+            # if down_sample:
+            plt.grid()
+            plt.savefig(path_single_movie_plot + '{p_id}_{char_index}_'
+                        .format(p_id=self.project_id, char_index=c_i))
+            plt.clf()
+
+
+        if down_sample:
+            x = np.arange(0, sample_status.shape[-1])
+            for s_i in range(1, len(x)):
+                for c_i in char_index:
+                    fig, ax1 = plt.subplots(figsize=(6, 10))
+                    for st_i in st_index[c_i]:
+                        status = sample_status[c_i][st_i]
+                        c = color[st_i]
+                        part_status = status[s_i-1:s_i+1]
+                        part_x = x[s_i-1:s_i+1]
+                        ax1.set_xticks(part_x)
+                        plt.scatter(part_x, part_status+visual_bias[st_i], s=20, c=c)
+                        plt.plot(part_x, part_status+visual_bias[st_i], label=labels[st_i])
+                        for i, value in enumerate(part_status):
+                            ax1.annotate(value, (part_x[i], part_status[i]), fontsize=30)
+                    plt.title('Scene {}'.format(s_i), fontsize=50)
+                    plt.xlabel('time', fontsize=30)
+                    plt.ylabel('level', fontsize=30)
+                    plt.xticks(fontsize=30)
+                    plt.yticks(fontsize=30)
+                    plt.ylim(-0.5, 4.5)
+                    plt.xlim(part_x[0] - 0.5, part_x[-1] + 0.5)
+                    plt.legend(fontsize=30)
+                    plt.grid()
+                    plt.savefig(path_single_movie_plot + '{p_id}_{char_index}_scene{s_i}'
+                                .format(p_id=self.project_id, char_index=c_i, s_i=s_i))
+                    plt.clf()
+                    plt.close()
 
 
 class Movie:
