@@ -24,6 +24,57 @@ Crisis: People trying to stop her
 ### scene 1 : [0 0 0 0]->[1 2 1 1], [0 0 3 0]->[0 0 3 0]
 
 
+# Porject 122 - How to Train your Dragon - Eileen
+## How to Train your Dragon 2 Arcs
+![How to Train your Dragon Arcs](Picture/170_MainCharacter0_.png)
+## Story Information
+### Theme
+
+### Character
+#### Hero: Alice, a college student
+
+Ella, ten years old
+ 
+Goal: find the happiness back
+
+Crisis: Encountered frustration, discouraged and  returned to an unhappy state.
+
+Change: independent, confidence
+
+Atiitude
+
+## Plot
+### scene 1 : [0 0 0 0] -> [1 1 0 1]
+Since the parents get new jobs in the west coach, Ella moves to the new city with parents from Boston. Everything is not familiar and looks like everything does not go well. Ella soon finds she is not happy anymore. She even does not want to talk to anyone in school.
+### Scene 2: [1 1 0 1]->[1 1 1 2]
+Ella messes the first quiz up in the new school. It is a big shock to Ella because Ella always is the top student in Boston. Ella blames this to the new city. Ella feels that the new city takes away her happiness. Ella decides to go back to the city where she used to live. Everything will be good if she does. She will be happy again.
+ 
+### Scene 3: [1 1 1 2]->[2 2 2 2]
+Ella feels a little bit excited and nervous because this is the first time Ella travels by herself.  She plans to buy the flight ticket first, but she does have not enough money.  She steals her mother's credit card and buys the ticket. 
+
+### Scene 4: [2 2 2 2]->[2 3 2 2]
+She feels better after she gets the ticket because she believes her happiness is on the way. Unfortunately, the check-in agency told her, 
+ she could not fly by herself because she is under 12, she needs to fly with an adult or the adult sign the waiver form. 
+
+### Scene 5: [2 3 2 2]->[3 3 3 3]
+Fail to get on the flight, Ella feels this is the worst day ever.  She still wants to back extremely. Okay, I still have the choice, the bus, whatever transportation,  nothing could stop me to go back. Ella plans to go to the station and her Mom shows up. 
+
+### Scene 6: [3 3 3 3]->[1 3 2 3]
+Mom found her credit card lost, in the meanwhile, she got the message from the bank.  She got what had happened right away. She found Ella by the ticket information. She takes Ella back to home without any words. Ella is very upset. She feels she can not find happiness back.。
+
+### Scene 7: [1 3 2 3]->[2 3 4 3]
+The second day, Ella goes to school in a bad mood.  After sitting in the classroom, her classmate Monica comes and invites her to take after school activity about Boston. Boston? Really? Ella's feeling is complicated. Take or not? She's hesitant about that. 'It won't be fun without your participation.'  'Okay, I am in.' Ella takes this invitation. 
+
+### Scene 8: [2 3 4 3]->[3 0 4 3]
+Ella and Monica go to the activity after school. The decoration is full of Boston style, nothing is special. Ella starts to feel boring and wants to escape. The light of the room is closed suddenly. The projector on the wall shows a familiar face, Ella's close friend in Boston. 'Surprise, Ella! How it possible your sharing experience in Boston does not include me?' Ella's eues are bigger at this moment. ' I miss you so much. Your new classmates asked me to do a video for you. They care about you a lot. I believe your feeling must be so different at this moment.  Ella, don't be sad. Boston always is open for you. We all stand by you. Good luck. ' At this moment, a big smile shows on Ella's face.
+
+### Scene 9: [3 0 4 3]->[4 0 4 4]
+The light is turned on. Monica talks with Ella first, 'Ella, how about the Lobster in Boston, I am a super fan about it. ' 'Ella, how about the snow in Boston?' 'Ella, do you like...?' Everyone tries to talk with Ella. Ella looks so busy with a big happy face. 
+
+### Scene 10: [4 0 4 4]->[4 0 4 4]
+Camera goes to Ella's backpack. Mom's credit card and Ella's piggy bank still in Ella's backpack.
+
+
 # Porject 184 - Superman II- Frank
 ## Superman II Arcs
 ![Superman Arcs](Picture/184_MainCharacter0_.png)
