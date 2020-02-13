@@ -26,7 +26,7 @@ Crisis: People trying to stop her
 
 # Porject 122 - How to Train your Dragon - Eileen
 ## How to Train your Dragon 2 Arcs
-![How to Train your Dragon Arcs](Picture/170_MainCharacter0_.png)
+![How to Train your Dragon Arcs](Picture/170_0_.png)
 ## Story Information
 ### Theme
 
