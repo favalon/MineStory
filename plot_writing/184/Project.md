@@ -31,7 +31,6 @@ Crisis: People trying to stop her
 ### Theme
 
 ### Character
-#### Hero: Alice, a college student
 
 Ella, ten years old
  
