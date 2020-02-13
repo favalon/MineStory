@@ -15,6 +15,7 @@ from general.general_class import MoviePlot, Cluster
 STATUS_NUM = 5
 STATUS_MAX_LENGTH = 1000
 MIN_THRESHOLD = 5
+CLUSTER_NUM = [[25, 15, 10, 10, 5], [15, 8, 8, 8, 8], [5, 5, 5, 5, 5]]
 
 
 def resample_scene_length(movie_status, resampled_movie_status, scene_len):
@@ -34,16 +35,22 @@ def resample_scene_length(movie_status, resampled_movie_status, scene_len):
     return
 
 
-def prepare_movie_plot_data(movies, n, access_role, save=False):
+def prepare_movie_plot_data(movies, n, save=False):
     movies_plot = {}
+    movies_dict = {}
     for movie in movies:
         project_id = movie['id']
+        movies_dict[project_id] = movie
         project_name = movie['name']
         char_num = len(movie['character_flag'])
-        if '{}_flag'.format(access_role) not in movie.keys():
-            continue
-        main_char_index = list(movie['{}_flag'.format(access_role)].keys())
-
+        char_role_dict = {}
+        for char in movie['movie']['specify']['key_characters']:
+            c_i = char['index']
+            c_role = char['rule']
+            if c_role in char_role_dict.keys():
+                char_role_dict[c_role].append(c_i)
+            else:
+                char_role_dict[c_role] = [c_i]
         # health, mental_health, change, crisis, goal
         movie_status = np.zeros((char_num, STATUS_NUM, len(movie['scene'])))
         resampled_movie_status = np.zeros((char_num, STATUS_NUM, STATUS_MAX_LENGTH))
@@ -59,22 +66,24 @@ def prepare_movie_plot_data(movies, n, access_role, save=False):
 
         normalize_status_x = np.arange(movie_status.shape[-1], dtype=np.float32)
         normalize_status_x /= np.max(np.abs(normalize_status_x))
-        movie_plot = MoviePlot(project_id, project_name, main_char_index, movie_status, resampled_movie_status, normalize_status_x)
+        movie_plot = MoviePlot(project_id, project_name, char_role_dict, movie_status, resampled_movie_status, normalize_status_x)
+
         movie_plot.down_sample_strict(n=n)
+
         movies_plot[project_id] = movie_plot
         if save:
             save_data('statistics_collection/data/', 'movie_plot', movies_plot)
-    return movies_plot
+    return movies_dict, movies_plot
 
 
-def plot_all(movies, status):
+def plot_all(movies, c_role, status):
     count_max = 5
     count = 0
     plt_index = 0
     marker = itertools.cycle((',', '+', '.', 'o', '*'))
     for p_id in movies.keys():
         x = movies[p_id].x_axis
-        for c_i in movies[p_id].main_char_index:
+        for c_i in movies[p_id].char_role_dict[c_role]:
             y = movies[p_id].movie_status[int(c_i)][status]
             # if y[-1] == 3:
             #     # print(movies[p_id].project_id)
@@ -103,11 +112,11 @@ def plot_all(movies, status):
     # plt.show()
 
 
-def plot_by_id(movies, project_id, status):
+def plot_by_id(movies, project_id, c_role, status):
     if status is not None:
         for p_id in project_id:
             x = movies[p_id].x_axis
-            for c_i in movies[p_id].main_char_index:
+            for c_i in movies[p_id].char_role_dict[c_role]:
                 y = movies[p_id].movie_status[int(c_i)][status]
                 if sum(y) == len(x) * 9 or sum(y) == 0:
                     continue
@@ -152,7 +161,7 @@ def compare_cluster(status_cluster, movie_status, project_id, char_index, status
 
 
 # find target cluster number
-def movies_status_cluster(movies_plot, status, min_threshold=10, n_clusters=25):
+def movies_status_cluster(movies_plot, c_role, status, min_threshold=10, n_clusters=25):
     status_cluster = {}
     status_list = []
     project_id_list = []
@@ -160,7 +169,7 @@ def movies_status_cluster(movies_plot, status, min_threshold=10, n_clusters=25):
     for p_i in movies_plot.keys():
         movie_plot = movies_plot[p_i]
         movie_status = movie_plot.down_sample_status
-        char_index = movie_plot.main_char_index
+        char_index = movie_plot.char_role_dict[c_role]
         for c_i in char_index:
             cur_status = movie_status[c_i][status]
             status_list.append(cur_status)
@@ -174,7 +183,7 @@ def movies_status_cluster(movies_plot, status, min_threshold=10, n_clusters=25):
 
     for i, p_id in enumerate(project_id_list):
         movie_plot = movies_plot[p_id]
-        char_index = movie_plot.main_char_index
+        char_index = movie_plot.char_role_dict[c_role]
         movie_status = movie_plot.down_sample_status
         for c_i in char_index:
             if labels[i] not in status_cluster.keys():
@@ -185,7 +194,7 @@ def movies_status_cluster(movies_plot, status, min_threshold=10, n_clusters=25):
     return status_cluster, min_threshold
 
 
-def split_cluster_group(status_cluster, status_index):
+def split_cluster_group(c_role, status_cluster, status_index):
     cluster_group = {}
     for key in status_cluster.keys():
         cls = status_cluster[key]
@@ -208,9 +217,11 @@ def split_cluster_group(status_cluster, status_index):
             else:
                 cluster_group['9_n'].append(cls)
 
-    path_cluster_group = "statistics_collection/plot_data/status_{st_id}/cluster_group/".format(st_id=status_index)
+    path_cluster_group = "statistics_collection/plot_data/{c_role}/status_{st_id}/cluster_group/"\
+        .format(c_role=c_role, st_id=status_index)
     Path(path_cluster_group).mkdir(parents=True, exist_ok=True)
-    path_cluster_group_data = "statistics_collection/plot_data/status_{st_id}/cluster_group_data/".format(st_id=status_index)
+    path_cluster_group_data = "statistics_collection/plot_data/{c_role}/status_{st_id}/cluster_group_data/"\
+        .format(c_role=c_role, st_id=status_index)
     Path(path_cluster_group_data).mkdir(parents=True, exist_ok=True)
 
     cls_keys = list(cluster_group.keys())
@@ -228,9 +239,10 @@ def split_cluster_group(status_cluster, status_index):
         part = 0
         for cls_keys in split_cls_keys:
             for cls in cls_keys:
-                plt.plot(x, cls.cluster, c=next(color),
-                        linewidth=2.0, label='cl_id:{}, m_num:{}'
-                         .format(cls.project_ids[0], len(cls.project_ids)))
+                if np.sum(cls.cluster) != 0 and np.sum(cls.cluster) != cls.cluster.shape[0] * 9:
+                    plt.plot(x, cls.cluster, c=next(color),
+                            linewidth=2.0, label='cl_id:{}, m_num:{}'
+                             .format(cls.project_ids[0], len(cls.project_ids)))
             plt.title('Cluster movies number range {m_range}'
                       .format(m_range=cls_group))
             plt.xlabel('time')
@@ -244,36 +256,62 @@ def split_cluster_group(status_cluster, status_index):
             part += 1
 
 
-def plot_main(movies, n=10,  access_role='MainCharacter', n_clusters=25, cluster_plt=False, project_id=None, all_movie=False):
-    # movies_plot = prepare_movie_plot_data(movies, n, access_role, save=True)
-    movies_plot = load_data('statistics_collection/data/', 'movie_plot')
+def plot_single_movie(movies, movie_plot, n=15, down_sample=False):
+    movie_plot.down_sample_strict(n=n)
 
-    movies_plot[118].down_sample_strict(n=11)
-    movies_plot[118].plot_status(down_sample=False, char_index=[0, 1], st_index=[[4, 3, 1, 2, 0], [4, 3]])
-    movies_plot[118].print_status_guide(char_index=[0, 1], st_index=[[4, 3, 1, 2, 0], [4, 3]])
+    char_index = []
+    char_role_label = []
+    st_index_martix = []
+    for char_role in movie_plot.char_role_dict.keys():
+        for i, c_i in enumerate(movie_plot.char_role_dict[char_role]):
+            char_index.append(c_i)
+            char_role_label.append(char_role + str(i))
+
+    movie_plot.plot_status(down_sample=down_sample, char_index=char_index, char_label=char_role_label)
+    movie_plot.print_status_guide(char_index=char_index, char_label=char_role_label)
     pass
 
-    # selected_statues = [0, 1, 2, 3, 4]
-    # for status in selected_statues:
-    #     clear_folders("statistics_collection/plot_data/status_{st_id}/*/*".format(st_id=status))
-    #     status_cluster, edc_dis = movies_status_cluster(movies_plot, status, n_clusters=n_clusters)
-    #     print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
-    #           .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
-    #
-    #     if all_movie:
-    #         plot_all(movies_plot, status)
-    #     elif project_id is not None:
-    #         plot_by_id(movies_plot, project_id, status)
-    #     elif cluster_plt:
-    #         for cls in status_cluster.keys():
-    #             status_cluster[cls].cluster_plot(status)
-    #             status_cluster[cls].head_ranked_plot(status)
-    #
-    #         # the cluster contains most movies
-    #         # status_cluster[0].rep_cluster_plot(status)
-    #
-    #         split_cluster_group(status_cluster, status)
-    #
-    #     else:
-    #         print("plot args wrong")
-    #     pass
+
+def select_movies_plot(movies_plot_pool, c_role):
+    movies_plot = {}
+    for p_id in movies_plot_pool.keys():
+        if c_role in movies_plot_pool[p_id].char_role_dict.keys():
+            movies_plot[p_id] = movies_plot_pool[p_id]
+    return movies_plot
+
+
+def plot_main(movies, n=10, p_id=False, cluster_plt=False, project_id=None, all_movie=False):
+    movies, movies_plot_pool = prepare_movie_plot_data(movies, n, save=True)
+    # movies_plot = load_data('statistics_collection/data/', 'movie_plot')
+    # del movies_plot[225]
+    # del movies_plot[215]
+    # del movies_plot[230]
+    if not p_id:
+        for i, c_role in enumerate(['MainCharacter', 'Supporter', 'Opposites']):
+            selected_statues = [0, 1, 2, 3, 4]
+            for j, status in enumerate(selected_statues):
+                clear_folders("statistics_collection/plot_data/{c_role}/status_{st_id}/*/*".format(c_role=c_role, st_id=status))
+                movies_plot = select_movies_plot(movies_plot_pool, c_role)
+                status_cluster, edc_dis = movies_status_cluster(movies_plot, c_role, status, n_clusters=CLUSTER_NUM[i][j])
+                print("distance threshold for status {st_id} is {dis_th}, number of cluster {cls_num}"
+                      .format(st_id=status, dis_th=edc_dis, cls_num=len(status_cluster)))
+
+                if all_movie:
+                    plot_all(movies_plot, c_role, status)
+                elif project_id is not None:
+                    plot_by_id(movies_plot, project_id, c_role, status)
+                elif cluster_plt:
+                    for cls in status_cluster.keys():
+                        status_cluster[cls].cluster_plot(c_role, status)
+                        status_cluster[cls].head_ranked_plot(c_role, status)
+
+                    # the cluster contains most movies
+                    # status_cluster[0].rep_cluster_plot(c_role, status)
+
+                    split_cluster_group(c_role, status_cluster, status)
+
+                else:
+                    print("plot args wrong")
+
+    else:
+        plot_single_movie(movies[p_id], movies_plot_pool[p_id], n=n, down_sample=True)

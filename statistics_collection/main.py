@@ -12,7 +12,7 @@ from datetime import date
 import glob
 from collections import namedtuple
 
-ACCESS_ROLE = 'Opposites'
+ACCESS_ROLE = 'MainCharacter'
 
 FLAG_ALL_ROLE = False
 
@@ -50,11 +50,8 @@ def single_process(project):
     characters = project['movie']['specify']['key_characters']
     for character in characters:
         correct_scene_data(project['scene'], character)
-        if not FLAG_ALL_ROLE:
-            if character['rule'] == ACCESS_ROLE:
-                char_index, char_flag = get_status_flag(character)
-                project['{role}_flag'.format(role=character['rule'])] = {char_index: char_flag}
         char_index, char_flag = get_status_flag(character)
+        project['{role}_flag'.format(role=character['rule'])] = {char_index: char_flag}
         if 'character_flag' in project.keys():
             project['character_flag'][char_index] = char_flag
         else:
@@ -283,23 +280,17 @@ def error_check(movies):
 
 def main():
     today = date.today()
-
     data_url = "http://api.minestoryboard.com/get_projects_data"
     data = get_data_url(data_url)
-    #
     # save_data_json('statistics_collection/data/', 'data_0205', data)
     # data = get_data_json('statistics_collection/data/data_0205_smf')
     movies, movies_smf = general_process(data)
     # movies_smf = get_data_json('statistics_collection/data/data_0205_smf')
     # scene length average： movie_data -> all status length average -> plot status curve
-
     error_check(movies_smf)
 
-    plot_main(movies_smf, n=11, access_role=ACCESS_ROLE, n_clusters=10, cluster_plt=True, all_movie=False)
+    plot_main(movies_smf, n=11, p_id=184, cluster_plt=True, all_movie=False)
 
-    # count_process(movies_smf, today)
-
-    # greed_path_process(movies_smf, today)
     pass
 
 

@@ -1,0 +1,20 @@
+=== Scene 1 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [0 0 0 0]->[0 0 0 0]
+=== Scene 2 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [0 0 0 0]->[0 1 1 0]
+=== Scene 3 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [0 1 1 0]->[0 2 1 0]
+=== Scene 4 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [0 2 1 0]->[1 2 2 1]
+=== Scene 5 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [1 2 2 1]->[1 1 2 2]
+=== Scene 6 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [1 1 2 2]->[2 2 3 3]
+=== Scene 7 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [2 2 3 3]->[2 3 3 3]
+=== Scene 8 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [2 3 3 3]->[3 2 3 3]
+=== Scene 9 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [3 2 3 3]->[3 1 3 2]
+=== Scene 10 Status Change Guide === 
+Character 0, use status : Goal-Crisis-Attitude-Change, lvl : [3 1 3 2]->[4 0 4 4]

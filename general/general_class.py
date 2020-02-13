@@ -24,14 +24,17 @@ class Cluster:
     def update_average_cluster(self, cluster):
         self.cluster = cluster
 
-    def cluster_plot(self, status_index):
+    def cluster_plot(self, c_role, status_index):
         marker = itertools.cycle((',', '+', '.', 'o', '*'))
         x = np.arange(0, len(self.cluster))
         for status in self.contain:
-            plt.plot(x, status, c=np.random.rand(3, ), marker=next(marker))
+            if np.sum(status) !=0 and np.sum(status) != status.shape[0]*9:
+                plt.plot(x, status, c=np.random.rand(3, ), marker=next(marker))
 
-        path_all_plot = "statistics_collection/plot_data/status_{st_id}/all_plot/".format(st_id=status_index)
-        path_cluster_rep = "statistics_collection/plot_data/status_{st_id}/cluster_average_rep/".format(st_id=status_index)
+        path_all_plot = "statistics_collection/plot_data/{c_role}/status_{st_id}/all_plot/"\
+            .format(c_role=c_role, st_id=status_index)
+        path_cluster_rep = "statistics_collection/plot_data/{c_role}/status_{st_id}/cluster_average_rep/"\
+            .format(c_role=c_role, st_id=status_index)
 
         Path(path_all_plot)\
             .mkdir(parents=True, exist_ok=True)
@@ -58,13 +61,14 @@ class Cluster:
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
 
-    def rep_cluster_plot(self, status_index):
+    def rep_cluster_plot(self, c_role, status_index):
         marker = itertools.cycle((',', '+', '.', 'o', '*'))
         x = np.arange(0, len(self.cluster))
         for status in self.contain:
             plt.plot(x, status, c=np.random.rand(3, ), marker=next(marker))
 
-        path_best_rep = "statistics_collection/plot_data/status_{st_id}/best_rep/".format(st_id=status_index)
+        path_best_rep = "statistics_collection/plot_data/{c_role}/status_{st_id}/best_rep/"\
+            .format(c_role=c_role, st_id=status_index)
         Path(path_best_rep).mkdir(parents=True, exist_ok=True)
 
         plt.title('Cluster ID:{cluster_id} Status:{status_index} Plot '
@@ -86,7 +90,7 @@ class Cluster:
                     .format(cluster_id=self.project_ids[0], status_index=status_index))
         plt.clf()
 
-    def head_ranked_plot(self, status_index):
+    def head_ranked_plot(self, c_role, status_index):
         head_num = 4
         marker = itertools.cycle((',', '+', '.', 'o', '*'))
         x = np.arange(0, len(self.cluster))
@@ -96,7 +100,8 @@ class Cluster:
 
         plt.plot(x, self.cluster, c=np.random.rand(3, ), marker='o', linewidth=3.0, label='average')
 
-        path_head_rep = "statistics_collection/plot_data/status_{st_id}/head_rep/".format(st_id=status_index)
+        path_head_rep = "statistics_collection/plot_data/{c_role}/status_{st_id}/head_rep/"\
+            .format(c_role=c_role, st_id=status_index)
         Path(path_head_rep).mkdir(parents=True, exist_ok=True)
 
         plt.title('Cluster ID:{cluster_id}, Status:{status_index} Representation Plot, {movie_num} Movies in this Cluster'
@@ -111,14 +116,13 @@ class Cluster:
 
 
 class MoviePlot:
-    def __init__(self, p_id, p_name, main_char_index, movie_status, resample_status,normalize_axis):
+    def __init__(self, p_id, p_name,  char_role_dict, movie_status, resample_status,normalize_axis):
         self.project_id = p_id
         self.project_name = p_name
         self.movie_status = movie_status
         self.x_axis = normalize_axis
-        self.main_char_index = main_char_index
+        self.char_role_dict = char_role_dict
         self.resample_status = resample_status
-
         self.down_sample_status = None
 
     def down_sample(self, n=100):
@@ -178,48 +182,71 @@ class MoviePlot:
                         continue
                     lv_index = getIndexPositions(turing_point_y, lvl)
                     for i in lv_index:
-                        index = int(turing_point_x[i] * 10 + 0.5)
+                        index = int(turing_point_x[i] * n)
+                        print(i, index, turing_point_x)
+                        print(fited_turing_point)
                         if not fited_turing_point[index][0]:
                             fit_turning_point[index] = turing_point_y[i]
                             fited_turing_point[index] = (True, turing_point_x[i])
-                        elif turing_point_x[i] > fited_turing_point[index][1] and not fited_turing_point[index+1][0]:
+                        elif turing_point_x[i] > fited_turing_point[index][1] and index + 1 <= len(fited_turing_point)-1\
+                                and not fited_turing_point[index+1][0]:
                             fit_turning_point[index+1] = turing_point_y[i]
                             fited_turing_point[index+1] = (True, turing_point_x[i])
                         elif turing_point_x[i] < fited_turing_point[index][1] and not fited_turing_point[index-1][0]:
                             fit_turning_point[index - 1] = turing_point_y[i]
                             fited_turing_point[index - 1] = (True, turing_point_x[i])
 
-                pointer = 0
+                pointer = -1
                 for s_i in range(n):
                     pointer += adder
                     if not fited_turing_point[s_i][0]:
                         self.down_sample_status[c_i][st_i][s_i] = self.resample_status[c_i][st_i][pointer]
                     else:
                         self.down_sample_status[c_i][st_i][s_i] = fit_turning_point[s_i]
-            print(self.down_sample_status[c_i][st_i])
+                    # pointer += adder
+                    # print(self.down_sample_status[c_i][st_i])
+                # print(self.down_sample_status[c_i][st_i])
 
-    def print_status_guide(self, char_index, st_index=None):
-        labels = ['H', 'A', 'F', 'C', 'G']
+    def print_status_guide(self, char_index, char_label):
+        labels = ['Health', 'Attitude', 'Change', 'Crisis', 'Goal']
+        st_index_range = []
+        for i in range(len(char_index)):
+            st_index_range.append([4, 3, 1, 2, 0])
+        path_single_movie_plot = "statistics_collection/plot_data/single_movie/{p_id}/{sample}/" \
+            .format(sample='down_sample', p_id=self.project_id)
 
-        for s_i in range(1, self.down_sample_status.shape[-1]):
-            print('=== Scene {s_i} Status change Guide ==='.format(s_i=s_i))
-            for c_i in char_index:
-                start_status = []
-                end_status = []
-                select_status = []
-                for st_i in st_index[c_i]:
-                    select_status.append(labels[st_i])
-                    start_status.append(str(int(self.down_sample_status[c_i][st_i][s_i-1])))
-                    end_status.append(str(int(self.down_sample_status[c_i][st_i][s_i])))
-                guide = 'Character {c_i}\n' \
-                        'status: {s_s}\n' \
-                        'start:  {start}\n' \
-                        'end:    {end}\n'\
-                    .format(c_i=c_i, s_s=' '.join(select_status)
-                            , start=' '.join(start_status), end=' '.join(end_status))
-                print(guide)
+        Path(path_single_movie_plot).mkdir(parents=True, exist_ok=True)
+        with open(path_single_movie_plot + 'story_guide.txt', "w") as f:
 
-    def plot_status(self, char_index, down_sample=False, st_index=None):
+            for s_i in range(1, self.down_sample_status.shape[-1]):
+                print('=== Scene {s_i} Status Change Guide ==='.format(s_i=s_i))
+                f.write('=== Scene {s_i} Status Change Guide === \n'.format(s_i=s_i))
+                for c_i in char_index:
+                    start_status = []
+                    end_status = []
+                    select_status = []
+                    for st_i in st_index_range[c_i]:
+                        status = self.down_sample_status[c_i][st_i]
+                        if np.sum(status) == 0 or np.sum(status) == status.shape[0] * 9:
+                            continue
+                        select_status.append(labels[st_i])
+                        start_status.append(str(int(self.down_sample_status[c_i][st_i][s_i-1])))
+                        end_status.append(str(int(self.down_sample_status[c_i][st_i][s_i])))
+                    guide1 = 'Character {c_i}\n' \
+                            'status: {s_s}\n' \
+                            'start:  {start}\n' \
+                            'end:    {end}\n'\
+                        .format(c_i=c_i, s_s=' '.join(select_status)
+                                , start=' '.join(start_status), end=' '.join(end_status))
+                    # print(guide1)
+
+                    guide2 = 'Character {c_i}, use status : {s_s}, lvl : [{start}]->[{end}]'\
+                        .format(c_i=c_i, s_s='-'.join(select_status), start=' '.join(start_status), end=' '.join(end_status))
+
+                    print(guide2)
+                    f.write(guide2+'\n')
+
+    def plot_status(self, char_index, char_label, down_sample=False, parts_plot=False):
         if down_sample:
             sample_status = self.down_sample_status
             names = 'down_sample'
@@ -228,22 +255,22 @@ class MoviePlot:
             names = 'original'
         labels = ['health', 'attitude', 'change', 'crisis', 'goal']
 
-        if st_index is not None:
-            st_index_range = st_index
-        else:
-            st_index_range = [4, 3, 1, 2, 0]
+        st_index_range = []
+        for i in range(len(char_index)):
+            st_index_range.append([4, 3, 1, 2, 0])
 
-
-        color = ['r', 'g', 'k', 'navy', 'm']
+        color = ['r', 'g', 'y', 'navy', 'm']
         marker = itertools.cycle((',', '+', '.', 'o', '*'))
         visual_bias = [0.06, 0.03, 0, -0.03, -0.06]
         line_style = ['-', '--', '-.', ':', 'dashdot']
 
-        for c_i in char_index:
+        for i, c_i in enumerate(char_index):
             x = np.arange(0, sample_status.shape[-1])
             fig, ax = plt.subplots()
-            for st_i in st_index[c_i]:
+            for st_i in st_index_range[c_i]:
                 status = sample_status[c_i][st_i]
+                if np.sum(status) == 0 or np.sum(status) == status.shape[0] * 9:
+                    continue
                 c = color[st_i]
                 ax.scatter(x, status+visual_bias[st_i], s=10, c=c)
                 ax.plot(x, status+visual_bias[st_i], c=c, label=labels[st_i])
@@ -256,7 +283,7 @@ class MoviePlot:
             Path(path_single_movie_plot).mkdir(parents=True, exist_ok=True)
             plt.title(
                 'Character : {char_index} Status : {st_range}'
-                .format(char_index=c_i, st_range=', '.join([str(x) for x in st_index_range])))
+                .format(char_index=char_label[i], st_range=', '.join([str(x) for x in st_index_range[i]])))
 
             if down_sample:
                 ax.set_xticks(x)
@@ -268,16 +295,15 @@ class MoviePlot:
             # if down_sample:
             plt.grid()
             plt.savefig(path_single_movie_plot + '{p_id}_{char_index}_'
-                        .format(p_id=self.project_id, char_index=c_i))
+                        .format(p_id=self.project_id, char_index=char_label[i]))
             plt.clf()
 
-
-        if down_sample:
+        if down_sample and parts_plot:
             x = np.arange(0, sample_status.shape[-1])
             for s_i in range(1, len(x)):
-                for c_i in char_index:
+                for i, c_i in enumerate(char_index):
                     fig, ax1 = plt.subplots(figsize=(6, 10))
-                    for st_i in st_index[c_i]:
+                    for st_i in st_index_range[c_i]:
                         status = sample_status[c_i][st_i]
                         c = color[st_i]
                         part_status = status[s_i-1:s_i+1]
@@ -297,7 +323,7 @@ class MoviePlot:
                     plt.legend(fontsize=30)
                     plt.grid()
                     plt.savefig(path_single_movie_plot + '{p_id}_{char_index}_scene{s_i}'
-                                .format(p_id=self.project_id, char_index=c_i, s_i=s_i))
+                                .format(p_id=self.project_id, char_index=char_label[i], s_i=s_i))
                     plt.clf()
                     plt.close()
 
