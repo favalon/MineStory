@@ -89,7 +89,7 @@ Henry opens his eyes, he has been waked up by the bartender.
 # Porject 122 - Lion King- Kyle
 ## Lion King Arcs
 ![Superman Arcs](Picture/122_MainCharacter0_.png)
-![Superman Arcs](Picture/122_Opposites0__.png)
+![Superman Arcs](Picture/122_Opposites0_.png)
 ## Story Information
 ### Theme
 Bring peace to the world
