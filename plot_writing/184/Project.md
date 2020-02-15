@@ -7,12 +7,16 @@
 Bring peace to the world
 
 ### Character
-#### Hero: Alice, a college student
+#### Hero: 14 year old girl from secluded remote village hidden in Safari on Island
+Goal: Protect Land/Animals
+Crisis: life/death
+Change: Value of Nature
 
-[Goal, Crisis, Attitude, Change]    
-Goal: Save city\
-Crisis: Life in danger\
-Change: Learn to be a hero\
+
+#### Villian: A Poacher/developer
+Goal: Kill all the Animals and Build on Land
+Crisis: Life/Death
+
 
 #### Villain: Martha, a college student
 
@@ -21,7 +25,48 @@ Goal: Look after herself no matter cost\
 Crisis: People trying to stop her
 
 ## Plot
-### scene 1 : [0 0 0 0]->[1 2 1 1], [0 0 3 0]->[0 0 3 0]
+### scene 1 : [0 0 0 0]->[0 0 0 0], [0 0 0]->[1 0 0]
+Olivia awakens in her tent and goes about her day as normal. She watches as the boy’s get ready to go on a hunt that makes them officially men. Meanwhile, a few miles outside of the village a poacher has landed on their Island. This Poacher is the Famous Bafangulo who’s goal in life is to make as much money as possible by taking over lands, killing all the animals, cutting down all the trees, and building expensive condos
+
+### scene 2 : [0 0 0 0]->[1 0 0 0], [1 0 0]->[2 1 0]
+
+Bafangulo encounters the troop of boy’s and a battle occurs. Bafangulo and his men are able to capture the boy’s and take them as prisoner. A messenger parrot that belongs to the tribe and was with the boy’s manages to escape and fly home. When Olivia hears the message she knows that it is up to her to step up and try and find the boy’s.
+
+
+### scene 3 : [1 0 0 0]->[2 1 0 0], [2 1 0]->[2 1 0]
+
+Olivia set’s out on her journey complaining about all the bugs, and roots she keeps tripping on. She trips on a root and falls down a steep ravine about 10 ft deep. In this ravine she finds a large glowing rock, which she believes is the stone her grandmother told her about. This stone gives life and protects the island. It also somehow gives Olivia the power to talk to animals. She ties this rock around her neck and decides to take it with her for protection. Meanwhile Bafangulo is still taking the boy’s back to his lair with his minions.
+
+### scene 4 : [2 1 0 0]->[1 1 1 0], [2 1 0]->[3 2 0]
+
+Unfortunately, Olivia get’s lost in a dark part of the forest. But she becomes friends with a wise owl who is able to lead her out. She begins to start reflecting on why she hates nature. Once at his Lair Bafangulo sees his large shipment of Dynamite has arrived. While he is not looking a boy manages to escape.
+
+### scene 4 : [1 1 1 0]->[1 2 1 0], [3 2 0]->[4 2 0]
+
+The boy finds Olivia in the forest and tells her of Bafangulo’s plan to destroy the land. He begs her to run away with him and get to safety. Olivia agrees reluctantly because this is a boy she had a crush on. Unfortunately one of Bafangulo’s minions has followed the boy and starts following them. He calls Bafangulo and notifies him that his one true enemy has retreated. Hearing this news he sends his minions out to catch and capture every animal. He begins using the dynamite to destroy mountains.
+
+### scene 4 : [1 2 1 0]->[0 3 1 1], [4 2 0]->[4 2 0]
+
+The minion decides to attack Olivia and the boy and manages to beat them up and tie them up. He begins taking them to Bafangulo. Bafangulo continues to destroy the land.
+
+### scene 4 : [0 3 1 1]->[1 3 2 0], [4 2 0]->[4 2 0]
+
+While being carried Olivia begins to realize that she made the wrong choice and never should have run away. She begins to hear the cries of all the animals that have been captured and begins to cry. The tears reach the stone she is wearing around her neck and she begins to heal.
+
+### scene 4 : [1 3 2 0]->[3 4 4 0], [4 2 0]->[3 4 0]
+
+Once they arrive at the lair of Bafangulo all the animals are ecstatic to see Olivia. They rally together to untie Olivia. This makes Olivia realize she was wrong hating the animals. She vow’s to save and protect them just like they did to her. Olivia uses the stone to apologize to the animals for hating them. She then asks them to help her defend their land.  The animals agree and begin fighting against Bafangulo and his henchmen.
+
+### scene 4 : [3 4 4 0]->[4 0 4 0], [3 4 0]->[0 4 4]
+
+Bafangulo manages to snatch the stone off of Olivia’s neck during battle. He uses it to try and convince the animals to attack Olivia. They refuse at first but Bafangulo reads the inscription on the stone that gives him full control of the animals. They begin charging at Olivia. Olivia shouts No! and discovers that all the animals can still hear her. This breaks the power Bafangulo had over them. The messenger parrot manages to steal the stone from Bafangulo and bring it back to Olivia. During the fight while there is an avalanche in the cave which causes Bafangulu to fall off the edge of a cliff. While clinging to the edge Olivia runs and offers him her hand. Instead of reaching for her hand he reaches for her stone necklace but misses. His hand slips and he falls to his Death. 
+
+### scene 4 : [4 0 4 0]->[4 0 4 0], [0 4 4]->[0 4 4]
+
+After his death the boy’s are freed and they get to work freeing and taking care of injured animals. Olivia returns home and is crowned Protector of the Realm. The Tribe lives happily and in harmony with all wildlife and nature.
+
+
+
 
 
 # Porject 122 - How to Train your Dragon - Eileen
@@ -80,7 +125,7 @@ Camera goes to Ella's backpack. Mom's credit card and Ella's piggy bank still in
 
 ## Story Information
 ### Theme
-The most important things in the life
+find the most important things in the life
 
 ### Character
 #### Character: Henry, 23 years old young man
@@ -91,41 +136,27 @@ Change : belief
 
 ## Plot
 ### scene 1 : [0 0 0 0]->[0 0 0 0]
-Henry has already complained about his life to the bartender every night for a long time. 
+Henry has already complained about his life to the bartender every night for a long time. Henry always said he life is terrible because he is not rich.
 Until one day, the bartender gives him an address and tells him, 
 if you want to have an different life, you can go to meet this guy. 
 ### scene 2 : [0 0 0 0]->[0 1 1 0]
-Henry followed the address to a mansion in the city, 
-and the wallet was snatched on his way, 
-leaving only the note with the address in his pocket. 
-Henry thinks if he can live in such a place, he can give up everything he has.  
+Henry followed the address to a mansion in the city. Although the address is in the city's downtown, weirdly, no one around on the street.
+When seeing this building, Henry thinks if he can live in such a place, he can give up everything.  
 ### scene 3 : [0 1 1 0]->[0 2 1 0]
-The owner of the mansion tells Henry he has a machine that can make Henry's dream comes true, 
-however, everything has a price. Henry will get the life he want, but he need to give up something to exchange.
-The price is the 10 years of life. And the price to leave this place without do the exchange is 10 years of life. 
-Henry accepts the deal without hesitation. 
+The owner of the mansion told Henry he could make Henry's dream comes true. The owner told Henry to come back tomorrow, he need some time to prepare the things.
+The owner also warned Henry that the transaction is irrevocable. Henry would die if he accepted the deal and did not come back. Henry is shocked by the warning, but he accepted the deal. 
 ### scene 4 : [0 2 1 0]->[1 2 2 1]
-Henry choose to become a rich man, then he can buy anything he want. 
-Henry become a 33 years old man, the richest man in the town. He has enjoy these days at the beginning.
-He can buy anything he want, but nothing with actual price can make him happy anymore later. 
-His company partner wants to kick him out of the company and his children only come home to ask for the money.
-He think money may not the most important thing, he go back to the mansion and asks for another life exchange.
-The owner told him, this time the price would be 15 years.
+The next day, Henry came back and he met another man in the mansion. The owner told Henry that this man is a millionaire and the machine would switch their souls, Henry then can have the life he want.
 ### scene 5 : [1 2 2 1]->[1 1 2 2]
-Henry choose to become the mayor, every one will listen his order.
-Henry become a 48 years mayor. Although he has the power to change many thing, he needs to attend to every
-meeting and travel around the city. There are also many people Want to drive him off from the mayor. 
-Henry is exhausted and frustrated. He is not sure about the power is the thing he want most or not.
+
 ### scene 6 : [1 1 2 2]->[2 2 3 3]
-During the election, his most trusted men betrayed him. Henry notices the power is not the most important thing.
+
 ### scene 7 : [2 2 3 3]->[2 3 3 3]
-Although he win the election at the end, his family cut off the connection with him because of the rumors. 
+
 ### scene 8 : [2 3 3 3]->[3 2 3 3]
-Henry back to the mansion again, and asks for the best life ever, this time the price is 20 years of life.
-The price doesn't matter anymore to Henry.
+
 ### scene 9 : [3 2 3 3]->[3 1 3 2]
-Henry is 68 years old, this time he become a normal person, Henry himself, but he is 68 years old now.
-Henry is confused and angry. "Why I become myself? This cost me 20 years of life?"
+
 ### scene 10 : [3 1 3 2]->[4 0 4 4]
 The memories of his life between the missing 45 years poured into his brain, he remember everything.
 He has met his wife at 25, they have 3 lovely children. He believe his family is the best family ever, though he is not rich.

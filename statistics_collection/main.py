@@ -289,7 +289,7 @@ def main():
     # scene length average： movie_data -> all status length average -> plot status curve
     error_check(movies_smf)
 
-    plot_main(movies_smf, n=11, p_id=184, cluster_plt=True, all_movie=False)
+    plot_main(movies_smf, n=11, p_id=None, cluster_plt=True, all_movie=False)
 
     pass
 
