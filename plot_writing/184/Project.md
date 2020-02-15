@@ -1,7 +1,7 @@
 # Porject 122 - Kung Fu Panda 2 - Ellie
 ## Kung Fu Panda 2 Arcs
 ![Superman Arcs](Picture/244_MainCharacter0_.png)
-![Superman Arcs](Picture/244_Opposites0__.png)
+![Superman Arcs](Picture/244_Opposites0_.png)
 ## Story Information
 ### Theme
 Bring peace to the world
