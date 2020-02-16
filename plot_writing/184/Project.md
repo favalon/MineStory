@@ -88,35 +88,37 @@ Change: independent, confidence
 Atiitude
 
 ## Plot
-### scene 1 : [0 0 0 0] -> [1 1 0 1]
-Since the parents get new jobs in the west coach, Ella moves to the new city with parents from Boston. Everything is not familiar and looks like everything does not go well. Ella soon finds she is not happy anymore. She even does not want to talk to anyone in school.
+### Scene 1: [0 0 0 0] -> [1 1 0 1]
+Ella is introverted and timid. Ella plans to spend her summer with Aunt. She is attracted to her aunt's private library. However, her aunt tells her never touch the book in the glass cabinet, otherwise, it would cause confusion. Ella is very curious about that book. Finally, she takes out the book and reads it when her Aunt out of town. She finds this book is magic book soon. She can enter the book world right away and all the characters are alive when she is reading loudly.
+
 ### Scene 2: [1 1 0 1]->[1 1 1 2]
-Ella messes the first quiz up in the new school. It is a big shock to Ella because Ella always is the top student in Boston. Ella blames this to the new city. Ella feels that the new city takes away her happiness. Ella decides to go back to the city where she used to live. Everything will be good if she does. She will be happy again.
+Cinderella, Snow White, Rapunzel, all the characters she loves are lively. She feels fantastic she could meet the characters in person. Ella has a bold idea. She know what will happen to each story,  maybe she can help the main character avoid those troubles in the story.
  
 ### Scene 3: [1 1 1 2]->[2 2 2 2]
-Ella feels a little bit excited and nervous because this is the first time Ella travels by herself.  She plans to buy the flight ticket first, but she does have not enough money.  She steals her mother's credit card and buys the ticket. 
+However, things never follow the direction as Ella expected. She broke Cinderella crystal shoe, cut Rapunzel's blond hair by accident, and gave Snow White's apple to the dwarf. After Ella reads more and more, the order in the fairyland becomes worse and worse. Ella's aunt comes back and finds this situation. She tells Ella that the only way to fix this problem is find the author Grimm and ask him to rewrite the story,  the fairyland will be saved. Ella does not believe she is able to find Grimm 
+by herself. Auntie encouraged her to move forward bravely, she needs to fix the problems she made by herself. Ella takes the book and starts her journey to Grimm's castle.
 
 ### Scene 4: [2 2 2 2]->[2 3 2 2]
-She feels better after she gets the ticket because she believes her happiness is on the way. Unfortunately, the check-in agency told her, 
- she could not fly by herself because she is under 12, she needs to fly with an adult or the adult sign the waiver form. 
+Ella comes to a forest by the Aunt's hint. She will see Grimm's castle after she goes through the forest. Ella takes a deep breath and walks into the forest. Ella feels so scared when she hears the horrible sounds from the deep of the forest. She starts to be tremble. She just wants to escape from the forest. She tells herself 'don't do that, don't do that', but the legs does not follow the order, she goes back physically.
 
 ### Scene 5: [2 3 2 2]->[3 3 3 3]
-Fail to get on the flight, Ella feels this is the worst day ever.  She still wants to back extremely. Okay, I still have the choice, the bus, whatever transportation,  nothing could stop me to go back. Ella plans to go to the station and her Mom shows up. 
+The book flies from Ella's backpack suddenly when Ella goes back. The book is opened by itself on the Cinderella page. Cinderella is crying with the broken crystal shoe. Her stepmother is yelling at her, beating her and laughing loudly. Ella changes her mind right away after watching this view. Ella realizes that she messed everything up, this is her responsibility to fix. She feels she is not that scared as before, she takes the map keeps going. The terrible sounds never stop. Ella keeps going, she encourages herself even she still feels a little bit scared. Finally, she comes out of the forest, the Grimm's castle is right in front of her. Unfortunately, Grimm is on an adventure, 
 
 ### Scene 6: [3 3 3 3]->[1 3 2 3]
-Mom found her credit card lost, in the meanwhile, she got the message from the bank.  She got what had happened right away. She found Ella by the ticket information. She takes Ella back to home without any words. Ella is very upset. She feels she can not find happiness back.。
+There is no one could figure out where is the Grimm. Ella is despaired. How to save the fairyland without Grimm's rewriting? SHe has no any ideas. Ella feels sad and cries. Then she plans to give up, goes back home tomorrow morning.
 
 ### Scene 7: [1 3 2 3]->[2 3 4 3]
-The second day, Ella goes to school in a bad mood.  After sitting in the classroom, her classmate Monica comes and invites her to take after school activity about Boston. Boston? Really? Ella's feeling is complicated. Take or not? She's hesitant about that. 'It won't be fun without your participation.'  'Okay, I am in.' Ella takes this invitation. 
+At night, Ella lay in the bed and is not able to sleep, her feeling is complicate. She is regretting and after a while, she finds the book is flying and flashing, looks like asking her to follow. Ella follows the book and comes to a room. She falls down to the dark space when she opens the door. After a series of tumbling, she lands in a small room.
 
 ### Scene 8: [2 3 4 3]->[3 0 4 3]
-Ella and Monica go to the activity after school. The decoration is full of Boston style, nothing is special. Ella starts to feel boring and wants to escape. The light of the room is closed suddenly. The projector on the wall shows a familiar face, Ella's close friend in Boston. 'Surprise, Ella! How it possible your sharing experience in Boston does not include me?' Ella's eues are bigger at this moment. ' I miss you so much. Your new classmates asked me to do a video for you. They care about you a lot. I believe your feeling must be so different at this moment.  Ella, don't be sad. Boston always is open for you. We all stand by you. Good luck. ' At this moment, a big smile shows on Ella's face.
+There is only one table in the small room. A notebook and a pen on the table. After reading the notebook, Ella starts to know, the book in her Aunt's house is written by Grimm also. The pen on this table is a magic pen that is why she can enter the fairyland when she is reading it. Grimm got it from a witch, his regular fairy tale book was very popular and the witch loved it. He promised to the witch to write something different. He tried to check the magic power and he wrote the same story again. He realized the characters were alive, he felt it was not that good as he expected that maybe something bad would happened. Then he separated the book and the pen. He gave the book to Ella's Aunt and left the pen here. Grimm mentioned that the pen could be used to fix the problems that like Ella made. Rewriting the book as the regular one like Aunt said. Ella is so excited and start to rewrite the book. 
 
 ### Scene 9: [3 0 4 3]->[4 0 4 4]
-The light is turned on. Monica talks with Ella first, 'Ella, how about the Lobster in Boston, I am a super fan about it. ' 'Ella, how about the snow in Boston?' 'Ella, do you like...?' Everyone tries to talk with Ella. Ella looks so busy with a big happy face. 
+The confusion of the fairyland is fixed by Ella's rewriting. Everything back to the normal. But Ella still feel guilty because there are a lot like Cinderella Ella decides to do something to make up. 
 
 ### Scene 10: [4 0 4 4]->[4 0 4 4]
-Camera goes to Ella's backpack. Mom's credit card and Ella's piggy bank still in Ella's backpack.
+There is one blank page left when Ella finish the writing. She looks at the blank page and has another idea that she draws more crystal shoes, a lot of good looking princes, some no poisoned apples for the future if someone else make the same mistakes as her, they can just take to fix the problems right away without rewriting. When she done everything, she feels tired and falls asleep on the table, the book is opened on the table. Camera turn to the book, the princes Ella draws on that page laugh to themselves maliciously.
+
 
 
 # Porject 184 - Superman II- Frank
@@ -144,26 +146,36 @@ Henry followed the address to a mansion in the city. Although the address is in 
 When seeing this building, Henry thinks if he can live in such a place, he can give up everything.  
 ### scene 3 : [0 1 1 0]->[0 2 1 0]
 The owner of the mansion told Henry he could make Henry's dream comes true. The owner told Henry to come back tomorrow, he need some time to prepare the things.
-The owner also warned Henry that the transaction is irrevocable. Henry would die if he accepted the deal and did not come back. Henry is shocked by the warning, but he accepted the deal. 
+The owner also warned Henry that the transaction is irrevocable. Some thing terrible would happen if he accepted the deal and did not come back. Henry is shocked by the warning, but he accepted the deal. 
 ### scene 4 : [0 2 1 0]->[1 2 2 1]
-The next day, Henry came back and he met another man in the mansion. The owner told Henry that this man is a millionaire and the machine would switch their souls, Henry then can have the life he want.
+The next day, Henry came back and he met another man in the mansion. The owner told Henry that this man is a millionaire and the machine will switch their souls, Henry then can have the life he want.
+Henry has never heard anything like this, he is scared and want to leave but the man in black takes him into the machine.
 ### scene 5 : [1 2 2 1]->[1 1 2 2]
-
-### scene 6 : [1 1 2 2]->[2 2 3 3]
-
+Henry become the millionaire, he enjoys the first few year of his new life. However, few years later, he the thing with actual price can't make him happy anymore. 
+He starts to get more and more irritable and he doesn't know what he can do. What he once wanted most couldn't bring him happiness anymore.
+### scene 6 : [1 1 2 2]->[2 2 3 3] 
+One day one the street, he sees 'Henry'(his body before the soul exchange) at the other side of the street. 
+Although "Henry" still looks poor, "Henry" has a smile he has never seen before, and he knows that this was happiness.
+He is very curious about 'Henry's' current life, because there is only bad thing in his old memories, What has happened to 'Henry' in recent years.
 ### scene 7 : [2 2 3 3]->[2 3 3 3]
-
+Henry walks across the street and tries to talk to 'Henry'. 
+Suddenly he can not move anymore, he sound of the mansion owner's voice suddenly appeared in his ear and tells him 'you cannot interfere 'Henry's' life, you already make the deal.'
 ### scene 8 : [2 3 3 3]->[3 2 3 3]
-
+Henry pays someone to investigate 'Henry' life, he believes there is something happen in 'Henry' life. 
+However, the 'Henry' life in the report are not much different from what Henry remember, the only different is 'Henry' work harder and more optimistic than Henry.
+Henry doesn't believe this and want to see it by himself, but the mansion owner's whisper has appeared again. 
 ### scene 9 : [3 2 3 3]->[3 1 3 2]
-
+For the following of days, Henry couldn't stop thinking about it, he wants to figure out what has happened. Henry go to see the mansion owner again.
+The mansion owner tells him, everything is the same. The different is 'Henry' has a dream but Henry doesn't. 
+The Henry can't believe that, because he has a dream when he is 'Henry' and that dream is become a rich man. 
+He has already achieved his 'dream' and why he is not happy at all. ' 'Henry' can not be happier than me, this is all illusion', he shout at the mansion owner.
 ### scene 10 : [3 1 3 2]->[4 0 4 4]
-The memories of his life between the missing 45 years poured into his brain, he remember everything.
-He has met his wife at 25, they have 3 lovely children. He believe his family is the best family ever, though he is not rich.
-He has build a lot of long-term friends during these years, they share the best time of the life together, though his has no power at all.
-...
-Henry suddenly understand, the most important things in his life is time(different experience). 
-With the time, there are thousands possibilities and great journeys.
+The mansion owner tells Henry, you can talk to 'Henry' just before the end of your life and he will have the answer.
+Many years later, 'Henry' comes to Henry house and 'Henry' is already a millionaire now. 'Today is your last day, and the mansion owner asks me to come to see you.'
+After so many years, 'Henry' becomes as rich as him and get the things he already has for a long time. Henry already knows the money is not the key but what is the key then. 
+'It's the journey of chasing your dreams, the pain and happiness in this process is the real wealth. 
+Become a rich man is a dream, but you never try to achieve that by pass through the process, thus you can not feel the pleasures'. 
+'Henry' passes his memory to Henry and Henry finally knows everything, but there is no chance for him to live as young Henry again. 
 
 Henry opens his eyes, he has been waked up by the bartender.
 
