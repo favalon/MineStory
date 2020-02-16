@@ -18,12 +18,6 @@ Goal: Kill all the Animals and Build on Land
 Crisis: Life/Death
 
 
-#### Villain: Martha, a college student
-
-[Goal, Crisis, Attitude, Health]\
-Goal: Look after herself no matter cost\
-Crisis: People trying to stop her
-
 ## Plot
 ### scene 1 : [0 0 0 0]->[0 0 0 0], [0 0 0]->[1 0 0]
 Olivia awakens in her tent and goes about her day as normal. She watches as the boy’s get ready to go on a hunt that makes them officially men. Meanwhile, a few miles outside of the village a poacher has landed on their Island. This Poacher is the Famous Bafangulo who’s goal in life is to make as much money as possible by taking over lands, killing all the animals, cutting down all the trees, and building expensive condos
@@ -77,15 +71,16 @@ After his death the boy’s are freed and they get to work freeing and taking ca
 
 ### Character
 
-Ella, ten years old
- 
-Goal: find the happiness back
+Main Character: Ella
+  
+Goal: rewrite the fairy tales
 
-Crisis: Encountered frustration, discouraged and  returned to an unhappy state.
+Crisis: Encountered frustration such as Grimm disappear
 
-Change: independent, confidence
+Change: be responsible
 
-Atiitude
+Attitude: unconfidence, scared -- confidence, brave
+
 
 ## Plot
 ### Scene 1: [0 0 0 0] -> [1 1 0 1]
