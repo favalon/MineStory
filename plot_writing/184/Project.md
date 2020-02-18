@@ -143,7 +143,7 @@ Change : belief
 
 ## Plot
 ### scene 1 : [0 0 0 0]->[0 0 0 0]
-Henry has already complained about his life to the bartender every night for a long time. Henry always said he life is terrible because he is not rich.
+Henry has already complained about his life to a friend every night for a long time. Henry always said he life is terrible because he is not rich.
 Until one day, the bartender gives him an address and tells him, 
 if you want to have an different life, you can go to meet this guy. 
 ### scene 2 : [0 0 0 0]->[0 1 1 0]
@@ -154,33 +154,35 @@ The owner of the mansion told Henry he could make Henry's dream comes true. The 
 The owner also warned Henry that the transaction is irrevocable. Some thing terrible would happen if he accepted the deal and did not come back. Henry is shocked by the warning, but he accepted the deal. 
 ### scene 4 : [0 2 1 0]->[1 2 2 1]
 The next day, Henry came back and he met another man in the mansion. The owner told Henry that this man is a millionaire and the machine will switch their souls, Henry then can have the life he want.
-Henry has never heard anything like this, he is scared and want to leave but the man in black takes him into the machine.
+Henry has never heard anything like this, he is scared and want to leave but he has been threaten by the owner to finish the deal. 
 ### scene 5 : [1 2 2 1]->[1 1 2 2]
-Henry become the millionaire, he enjoys the first few year of his new life. However, few years later, he the thing with actual price can't make him happy anymore. 
-He starts to get more and more irritable and he doesn't know what he can do. What he once wanted most couldn't bring him happiness anymore.
+Henry becomes the millionaire, he enjoys the first few months of his new life. However, few years later, he complains to his friends that the money can't make him happy anymore.
 ### scene 6 : [1 1 2 2]->[2 2 3 3] 
-One day one the street, he sees 'Henry'(his body before the soul exchange) at the other side of the street. 
-Although "Henry" still looks poor, "Henry" has a smile he has never seen before, and he knows that this was happiness.
-He is very curious about 'Henry's' current life, because there is only bad thing in his old memories, What has happened to 'Henry' in recent years.
+One day on the street, he sees 'Henry'(his body before the soul exchange) at the other side of the street. 'Henry' are talking with his friends.
+Although "Henry" still looks poor, "Henry" has a smile he has never seen before.
+He is very curious about 'Henry's' current life, because there is only bad things in his old memories. Henry want to figure out what has happened to 'Henry'.
 ### scene 7 : [2 2 3 3]->[2 3 3 3]
 Henry walks across the street and tries to talk to 'Henry'. 
-Suddenly he can not move anymore, he sound of the mansion owner's voice suddenly appeared in his ear and tells him 'you cannot interfere 'Henry's' life, you already make the deal.'
+When he tries to talk to 'Henry', 'Henry' seems unable to hear from him. 
+he sound of the mansion owner's voice suddenly appeared in his ear and tells him 'you cannot interfere 'Henry's' life, you already make the deal.'
 ### scene 8 : [2 3 3 3]->[3 2 3 3]
-Henry pays someone to investigate 'Henry' life, he believes there is something happen in 'Henry' life. 
-However, the 'Henry' life in the report are not much different from what Henry remember, the only different is 'Henry' work harder and more optimistic than Henry.
-Henry doesn't believe this and want to see it by himself, but the mansion owner's whisper has appeared again. 
+Henry is listening to the conversation between 'Henry' and his friends. He finds that 'Henry's' wealth and life has not changed much and 'Henry' has a dream to become a millionaire. 
+The only difference is that Henry's attitude towards life has become positive.
 ### scene 9 : [3 2 3 3]->[3 1 3 2]
 For the following of days, Henry couldn't stop thinking about it, he wants to figure out what has happened. Henry go to see the mansion owner again.
 The mansion owner tells him, everything is the same. The different is 'Henry' has a dream but Henry doesn't. 
 The Henry can't believe that, because he has a dream when he is 'Henry' and that dream is become a rich man. 
-He has already achieved his 'dream' and why he is not happy at all. ' 'Henry' can not be happier than me, this is all illusion', he shout at the mansion owner.
+He has already achieved his 'dream' but why he is not happy at all. '
+'Henry' can not be happier than me because I have already achieved his dream. these are all the illusions', he shout at the mansion owner.
 ### scene 10 : [3 1 3 2]->[4 0 4 4]
-The mansion owner tells Henry, you can talk to 'Henry' just before the end of your life and he will have the answer.
-Many years later, 'Henry' comes to Henry house and 'Henry' is already a millionaire now. 'Today is your last day, and the mansion owner asks me to come to see you.'
-After so many years, 'Henry' becomes as rich as him and get the things he already has for a long time. Henry already knows the money is not the key but what is the key then. 
-'It's the journey of chasing your dreams, the pain and happiness in this process is the real wealth. 
-Become a rich man is a dream, but you never try to achieve that by pass through the process, thus you can not feel the pleasures'. 
-'Henry' passes his memory to Henry and Henry finally knows everything, but there is no chance for him to live as young Henry again. 
+The mansion owner tells Henry you will know the answer in the end. 
+Many years later, 'Henry' comes to Henry house and 'Henry' is already a millionaire now. 
+'Today is your last day, and the mansion owner asks me to come to see you.'
+After so many years, 'Henry' already becomes a millionaire. 
+Henry already knows the money is not the key to happiness to but what is the key then. 
+'The key is the journey of chasing your dreams, the pain and happiness in this process is the real wealth. 
+Become a rich man is a dream, but you have never tried to achieve by yourself, thus you can not feel the pleasures'. 
+'Henry' passes his memory to Henry and Henry finally knows and feels everything, but there is no chance for him to live as young Henry again. 
 
 Henry opens his eyes, he has been waked up by the bartender.
 
