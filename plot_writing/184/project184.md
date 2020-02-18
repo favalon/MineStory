@@ -13,6 +13,9 @@ Conflict : \
 Attitude : \
 Change : belief
 
+## Title
+The Treasure of Life
+
 ## Plot
 ### scene 1 : [0 0 0 0]->[0 0 0 0]
 Henry has been complaining about his life to a friend every night for a long time. Henry has always said his life is terrible because he is not rich. Until one day, the friend gives him an address and tells him, if you want to have a different life, you can go to meet this guy
