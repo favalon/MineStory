@@ -45,7 +45,6 @@ Henry is eavesdropping on the conversation between 'Henry' and his friends. He f
 For the following days, Henry can't stop thinking about it, he wants to figure out what has happened. Henry goes to see the mansion owner again. The mansion owner tells him, everything is the same. The difference is 'Henry' has a dream but Henry doesn't. Henry can't believe that, because he also had a dream when he was 'Henry' and that dream was to become a millionaire. He has already achieved his 'dream' but wonders why he is not happy at all. He shouts at the mansion owner "'Henry' can not be happier than me because I have already achieved his dream. These are all the illusions!'"
 
 ### scene 10 : [3 1 3 2]->[4 0 4 4]
-#### Version 1:\
 The mansion owner tells Henry you will know the answer in the end. Many years later, The mansion owner comes to Henry's place and says "Today is your last day, and I came here to tell you the truth." After so many years, 'Henry' already became a millionaire. Henry already knows the money is not the key to happiness but what is the key then. 'The key is the journey of chasing your dreams, the pain and happiness in this process is the real wealth. Becoming a millionaire is a dream, but you have never tried to achieve it by yourself, thus you can not feel the pleasure'. The owner passes 'Henry's' memories to Henry and Henry finally understands it, but there is no chance for him to live as young Henry again.
 
 Henry opens his eyes and wakes up in his friend's bedroom.
