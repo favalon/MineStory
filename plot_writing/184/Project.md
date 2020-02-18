@@ -18,12 +18,6 @@ Goal: Kill all the Animals and Build on Land
 Crisis: Life/Death
 
 
-#### Villain: Martha, a college student
-
-[Goal, Crisis, Attitude, Health]\
-Goal: Look after herself no matter cost\
-Crisis: People trying to stop her
-
 ## Plot
 ### scene 1 : [0 0 0 0]->[0 0 0 0], [0 0 0]->[1 0 0]
 Olivia awakens in her tent and goes about her day as normal. She watches as the boy’s get ready to go on a hunt that makes them officially men. Meanwhile, a few miles outside of the village a poacher has landed on their Island. This Poacher is the Famous Bafangulo who’s goal in life is to make as much money as possible by taking over lands, killing all the animals, cutting down all the trees, and building expensive condos
@@ -41,27 +35,27 @@ Olivia set’s out on her journey complaining about all the bugs, and roots she 
 
 Unfortunately, Olivia get’s lost in a dark part of the forest. But she becomes friends with a wise owl who is able to lead her out. She begins to start reflecting on why she hates nature. Once at his Lair Bafangulo sees his large shipment of Dynamite has arrived. While he is not looking a boy manages to escape.
 
-### scene 4 : [1 1 1 0]->[1 2 1 0], [3 2 0]->[4 2 0]
+### scene 5 : [1 1 1 0]->[1 2 1 0], [3 2 0]->[4 2 0]
 
 The boy finds Olivia in the forest and tells her of Bafangulo’s plan to destroy the land. He begs her to run away with him and get to safety. Olivia agrees reluctantly because this is a boy she had a crush on. Unfortunately one of Bafangulo’s minions has followed the boy and starts following them. He calls Bafangulo and notifies him that his one true enemy has retreated. Hearing this news he sends his minions out to catch and capture every animal. He begins using the dynamite to destroy mountains.
 
-### scene 4 : [1 2 1 0]->[0 3 1 1], [4 2 0]->[4 2 0]
+### scene 6 : [1 2 1 0]->[0 3 1 1], [4 2 0]->[4 2 0]
 
 The minion decides to attack Olivia and the boy and manages to beat them up and tie them up. He begins taking them to Bafangulo. Bafangulo continues to destroy the land.
 
-### scene 4 : [0 3 1 1]->[1 3 2 0], [4 2 0]->[4 2 0]
+### scene 7 : [0 3 1 1]->[1 3 2 0], [4 2 0]->[4 2 0]
 
 While being carried Olivia begins to realize that she made the wrong choice and never should have run away. She begins to hear the cries of all the animals that have been captured and begins to cry. The tears reach the stone she is wearing around her neck and she begins to heal.
 
-### scene 4 : [1 3 2 0]->[3 4 4 0], [4 2 0]->[3 4 0]
+### scene 8 : [1 3 2 0]->[3 4 4 0], [4 2 0]->[3 4 0]
 
 Once they arrive at the lair of Bafangulo all the animals are ecstatic to see Olivia. They rally together to untie Olivia. This makes Olivia realize she was wrong hating the animals. She vow’s to save and protect them just like they did to her. Olivia uses the stone to apologize to the animals for hating them. She then asks them to help her defend their land.  The animals agree and begin fighting against Bafangulo and his henchmen.
 
-### scene 4 : [3 4 4 0]->[4 0 4 0], [3 4 0]->[0 4 4]
+### scene 9 : [3 4 4 0]->[4 0 4 0], [3 4 0]->[0 4 4]
 
 Bafangulo manages to snatch the stone off of Olivia’s neck during battle. He uses it to try and convince the animals to attack Olivia. They refuse at first but Bafangulo reads the inscription on the stone that gives him full control of the animals. They begin charging at Olivia. Olivia shouts No! and discovers that all the animals can still hear her. This breaks the power Bafangulo had over them. The messenger parrot manages to steal the stone from Bafangulo and bring it back to Olivia. During the fight while there is an avalanche in the cave which causes Bafangulu to fall off the edge of a cliff. While clinging to the edge Olivia runs and offers him her hand. Instead of reaching for her hand he reaches for her stone necklace but misses. His hand slips and he falls to his Death. 
 
-### scene 4 : [4 0 4 0]->[4 0 4 0], [0 4 4]->[0 4 4]
+### scene 10 : [4 0 4 0]->[4 0 4 0], [0 4 4]->[0 4 4]
 
 After his death the boy’s are freed and they get to work freeing and taking care of injured animals. Olivia returns home and is crowned Protector of the Realm. The Tribe lives happily and in harmony with all wildlife and nature.
 
@@ -77,15 +71,16 @@ After his death the boy’s are freed and they get to work freeing and taking ca
 
 ### Character
 
-Ella, ten years old
- 
-Goal: find the happiness back
+Main Character: Ella
+  
+Goal: rewrite the fairy tales
 
-Crisis: Encountered frustration, discouraged and  returned to an unhappy state.
+Crisis: Encountered frustration such as Grimm disappear
 
-Change: independent, confidence
+Change: be responsible
 
-Atiitude
+Attitude: unconfidence, scared -- confidence, brave
+
 
 ## Plot
 ### Scene 1: [0 0 0 0] -> [1 1 0 1], 
