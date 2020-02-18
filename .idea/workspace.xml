@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e52d320c-d5a4-4f6f-8abb-1bafe4bd4ffc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot_writing/184/Project.md" beforeDir="false" afterPath="$PROJECT_DIR$/plot_writing/184/Project.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +28,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580263283475" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../AutoCamera/PythonCode/VisualizeOptimization" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -125,9 +124,9 @@
     </configuration>
     <list>
       <item itemvalue="Python.get_n_and_path" />
+      <item itemvalue="Python.main (1)" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.side_test" />
-      <item itemvalue="Python.main (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -172,10 +171,10 @@
     <state width="1220" height="467" key="DebuggerActiveHint/0.0.1536.824/1920.43.1920.1040@0.0.1536.824" timestamp="1580674456188" />
     <state width="1368" height="740" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1581182731749" />
     <state width="1546" height="589" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1581662267159" />
-    <state x="361" y="346" key="FileChooserDialogImpl" timestamp="1581616482083">
+    <state x="361" y="346" key="FileChooserDialogImpl" timestamp="1581963575215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="361" y="346" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581616482083" />
+    <state x="361" y="346" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581963575215" />
     <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1581748359994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

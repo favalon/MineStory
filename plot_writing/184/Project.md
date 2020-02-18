@@ -88,37 +88,47 @@ Change: independent, confidence
 Atiitude
 
 ## Plot
-### Scene 1: [0 0 0 0] -> [1 1 0 1]
-Ella is introverted and timid. Ella plans to spend her summer with Aunt. She is attracted to her aunt's private library. However, her aunt tells her never touch the book in the glass cabinet, otherwise, it would cause confusion. Ella is very curious about that book. Finally, she takes out the book and reads it when her Aunt out of town. She finds this book is magic book soon. She can enter the book world right away and all the characters are alive when she is reading loudly.
+### Scene 1: [0 0 0 0] -> [1 1 0 1], 
+Ella is an introverted and timid girl who lives with Aunt. Her Aunt has a private library. She is attracted by a book her aunt tells her never to read, otherwise, it would cause confusion. Ella reads it when her Aunt is out of town. She finds it is a magic book. She can enter and exit the fairy tale land of the book when she reads this book loudly. Ella could enter any scene of the story. 
 
 ### Scene 2: [1 1 0 1]->[1 1 1 2]
-Cinderella, Snow White, Rapunzel, all the characters she loves are lively. She feels fantastic she could meet the characters in person. Ella has a bold idea. She know what will happen to each story,  maybe she can help the main character avoid those troubles in the story.
+She soon makes friends with Cinderella, Snow White, Rapunzel, the characters she loves in the book world. Ella has a bold idea. She knows what will happen to each story, maybe she can help the main character avoid those troubles in the story.
  
 ### Scene 3: [1 1 1 2]->[2 2 2 2]
-However, things never follow the direction as Ella expected. She broke Cinderella crystal shoe, cut Rapunzel's blond hair by accident, and gave Snow White's apple to the dwarf. After Ella reads more and more, the order in the fairyland becomes worse and worse. Ella's aunt comes back and finds this situation. She tells Ella that the only way to fix this problem is find the author Grimm and ask him to rewrite the story,  the fairyland will be saved. Ella does not believe she is able to find Grimm 
-by herself. Auntie encouraged her to move forward bravely, she needs to fix the problems she made by herself. Ella takes the book and starts her journey to Grimm's castle.
+However, things never follow the direction as Ella expected. She steals the poisonous apple from the Queen in 'Snow White'. Snow alives and becomes the queen. Unexpectedly, she is cruel to the people. In the meanwhile, Aunt finds this problem due to the content of all the fairy tale books being changed. This magic book affects all fairy tale books. The children who read 'Snow White' are so scared and could not stop crying. The poster of the 'Snow White'  changes into a violent style automatically also.  
+
+
+
 
 ### Scene 4: [2 2 2 2]->[2 3 2 2]
-Ella comes to a forest by the Aunt's hint. She will see Grimm's castle after she goes through the forest. Ella takes a deep breath and walks into the forest. Ella feels so scared when she hears the horrible sounds from the deep of the forest. She starts to be tremble. She just wants to escape from the forest. She tells herself 'don't do that, don't do that', but the legs does not follow the order, she goes back physically.
+Ella escapes the fairy tale land of the book in a hurry with loudly reading. She feels afraid and avoids facing the mistakes. Aunt tries to persuade Ella to face and fix it, but Ella refuses. Aunt shows Ella the current book content. Cinderella kills the stepmother and becomes a bully in the town. Pinocchio can not change into a real boy anymore. He is addicted to playing on the Island, does not care Geppetto is heartbroken at all. All of this is happening because of what Ella did. 
+
+
+
 
 ### Scene 5: [2 3 2 2]->[3 3 3 3]
-The book flies from Ella's backpack suddenly when Ella goes back. The book is opened by itself on the Cinderella page. Cinderella is crying with the broken crystal shoe. Her stepmother is yelling at her, beating her and laughing loudly. Ella changes her mind right away after watching this view. Ella realizes that she messed everything up, this is her responsibility to fix. She feels she is not that scared as before, she takes the map keeps going. The terrible sounds never stop. Ella keeps going, she encourages herself even she still feels a little bit scared. Finally, she comes out of the forest, the Grimm's castle is right in front of her. Unfortunately, Grimm is on an adventure, 
+Aunt keeps encouraging Ella to think about the children in the world. The fairy tale land will be saved if she finds the author Grimm and asks him to rewrite the story, otherwise the children in the world won't be able to read the great stories again. Ella thinks about that whole night and decides to look for Grimm on the next day.
+
+
 
 ### Scene 6: [3 3 3 3]->[1 3 2 3]
-There is no one could figure out where is the Grimm. Ella is despaired. How to save the fairyland without Grimm's rewriting? SHe has no any ideas. Ella feels sad and cries. Then she plans to give up, goes back home tomorrow morning.
+Ella comes to a forest by the Aunt's hint. She will see Grimm's house after she goes through the forest. Ella feels so scared when she hears the horrible sounds from the deep of the forest. She starts to tremble and tries to go back.
 
 ### Scene 7: [1 3 2 3]->[2 3 4 3]
-At night, Ella lay in the bed and is not able to sleep, her feeling is complicate. She is regretting and after a while, she finds the book is flying and flashing, looks like asking her to follow. Ella follows the book and comes to a room. She falls down to the dark space when she opens the door. After a series of tumbling, she lands in a small room.
+The book becomes manic, screams kept coming out from the book. Ella remembers what her aunt had said. Ella realizes that she can’t escape, this is her responsibility. Finally, she comes out of the forest, the Grimm's house is right in front of her. Unfortunately, Grimm is on an adventure, no one could figure out where he is. Ella has despaired. She decides to go home tomorrow morning.
+
 
 ### Scene 8: [2 3 4 3]->[3 0 4 3]
-There is only one table in the small room. A notebook and a pen on the table. After reading the notebook, Ella starts to know, the book in her Aunt's house is written by Grimm also. The pen on this table is a magic pen that is why she can enter the fairyland when she is reading it. Grimm got it from a witch, his regular fairy tale book was very popular and the witch loved it. He promised to the witch to write something different. He tried to check the magic power and he wrote the same story again. He realized the characters were alive, he felt it was not that good as he expected that maybe something bad would happened. Then he separated the book and the pen. He gave the book to Ella's Aunt and left the pen here. Grimm mentioned that the pen could be used to fix the problems that like Ella made. Rewriting the book as the regular one like Aunt said. Ella is so excited and start to rewrite the book. 
+At night, the book is flashing, which looks like asking her to follow. Ella follows the book and comes to a room. There is a notebook and a pen on a table in this room.
 
 ### Scene 9: [3 0 4 3]->[4 0 4 4]
-The confusion of the fairyland is fixed by Ella's rewriting. Everything back to the normal. But Ella still feel guilty because there are a lot like Cinderella Ella decides to do something to make up. 
+The notebook shows her the pen is a magic pen that anyone can use to rewrite for the fairy tale land in case Grimm can’t do that. But the fairy tale land can’t be entered after rewriting, the magic of this book will be lost. That is what Ella wants. She hopes there are no other people doing the same thing as her.  Ella starts to rewrite the book without any hesitation. 
+
+
+
 
 ### Scene 10: [4 0 4 4]->[4 0 4 4]
-There is one blank page left when Ella finish the writing. She looks at the blank page and has another idea that she draws more crystal shoes, a lot of good looking princes, some no poisoned apples for the future if someone else make the same mistakes as her, they can just take to fix the problems right away without rewriting. When she done everything, she feels tired and falls asleep on the table, the book is opened on the table. Camera turn to the book, the princes Ella draws on that page laugh to themselves maliciously.
-
+The posters hanging on the theater’s wall changed into the original content one by one. The children begin to cheer after they read the Pinocchio.
 
 
 # Porject 184 - Superman II- Frank
