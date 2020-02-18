@@ -15,7 +15,7 @@ Change : belief
 
 ## Plot
 ### scene 1 : [0 0 0 0]->[0 0 0 0]
-Henry has already complained about his life to a friend every night for a long time. Henry has always said his life is terrible because he is not rich. Until one day, the bartender gives him an address and tells him, if you want to have a different life, you can go to meet this guy.
+Henry has already complained about his life to a friend every night for a long time. Henry has always said his life is terrible because he is not rich. Until one day, the friend gives him an address and tells him, if you want to have a different life, you can go to meet this guy.
 
 ### scene 2 : [0 0 0 0]->[0 1 1 0]
 Henry followed the address to a mansion in the city. Although the address is in the city's downtown, weirdly, no one is around on the street. When seeing this building, Henry thinks he would give up everything to live in such a place.
