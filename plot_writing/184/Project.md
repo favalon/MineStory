@@ -164,7 +164,7 @@ He is very curious about 'Henry's' current life, because there is only bad thing
 ### scene 7 : [2 2 3 3]->[2 3 3 3]
 Henry walks across the street and tries to talk to 'Henry'. 
 When he tries to talk to 'Henry', 'Henry' seems unable to hear from him. 
-he sound of the mansion owner's voice suddenly appeared in his ear and tells him 'you cannot interfere 'Henry's' life, you already make the deal.'
+the sound of the mansion owner's voice suddenly appeared in his ear and tells him 'you cannot interfere 'Henry's' life, you already make the deal.'
 ### scene 8 : [2 3 3 3]->[3 2 3 3]
 Henry is listening to the conversation between 'Henry' and his friends. He finds that 'Henry's' wealth and life has not changed much and 'Henry' has a dream to become a millionaire. 
 The only difference is that Henry's attitude towards life has become positive.
