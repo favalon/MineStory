@@ -49,8 +49,3 @@ For the following days, Henry can't stop thinking about it, he wants to figure o
 The mansion owner tells Henry you will know the answer in the end. Many years later, The mansion owner comes to Henry's place and says "Today is your last day, and I came here to tell you the truth." After so many years, 'Henry' already became a millionaire. Henry already knows the money is not the key to happiness but what is the key then. 'The key is the journey of chasing your dreams, the pain and happiness in this process is the real wealth. Becoming a millionaire is a dream, but you have never tried to achieve it by yourself, thus you can not feel the pleasure'. The owner passes 'Henry's' memories to Henry and Henry finally understands it, but there is no chance for him to live as young Henry again.
 
 Henry opens his eyes and wakes up in his friend's bedroom.
-
-#### Version 2:\
-Many years later, Henry already has learned that money is not the key to happiness, but he wonders what the true key to happiness is. On the last day of Henry's life, Henry and 'Henry' meet in the old people's home. This time, Henry is able talk with 'Henry'. 'Henry’ tells him, 'The key is in the journey of chasing your dreams, the pain and happiness in this process is the real wealth. Becoming a millionaire is a dream, but you have never tried to achieve it by yourself, thus you can not feel the pleasure'. 'Henry' passes his memories to Henry, (the good and the bad) and Henry finally understands, but there is no chance for him to go back and live as young Henry again.
-
-Henry opens his eyes and wakes up in his friend's bedroom.
